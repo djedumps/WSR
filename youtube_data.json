@@ -1,0 +1,660 @@
+{
+  "tracks": [
+    {
+      "number": 1,
+      "title": "CAHAYA [WSR Release]",
+      "artist": "MIRZUL",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "2",
+      "duration": "Brevemente",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg",
+      "videoId": "UFynmEtoUVI",
+      "youtubeUrl": "https://www.youtube.com/watch?v=UFynmEtoUVI",
+      "audioFile": "music/001_CAHAYA_[WSR_Release].mp3"
+    },
+    {
+      "number": 2,
+      "title": "Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]",
+      "artist": "YTM x edumps",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "391",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/kEFhQEQm2ZM/maxresdefault.jpg",
+      "videoId": "kEFhQEQm2ZM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=kEFhQEQm2ZM",
+      "audioFile": "music/002_Never_Be_The_Same_(Don't_Forget_Me,_Pt._III)_[WSR_.mp3"
+    },
+    {
+      "number": 3,
+      "title": "Beautiful Moon (Tibo Walker) [WSR X NCR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "29.0M",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/8Rab-4lgOCM/maxresdefault.jpg",
+      "videoId": "8Rab-4lgOCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8Rab-4lgOCM",
+      "audioFile": "music/003_Beautiful_Moon_(Tibo_Walker)_[WSR_X_NCR_Release].mp3"
+    },
+    {
+      "number": 4,
+      "title": "i miss you [WSR Release]",
+      "artist": "YTM",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "187",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/bn779nghq2Q/maxresdefault.jpg",
+      "videoId": "bn779nghq2Q",
+      "youtubeUrl": "https://www.youtube.com/watch?v=bn779nghq2Q",
+      "audioFile": "music/004_i_miss_you_[WSR_Release].mp3"
+    },
+    {
+      "number": 5,
+      "title": "Fearless [WSR Release]",
+      "artist": "J.H.L",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "377",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg",
+      "videoId": "-nCqg5BsGQY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=-nCqg5BsGQY",
+      "audioFile": "music/005_Fearless_[WSR_Release].mp3"
+    },
+    {
+      "number": 6,
+      "title": "Half [WSR Release]",
+      "artist": "J.H.L",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "12.0M",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/maxresdefault.jpg",
+      "videoId": "Zsa2O7cMq6Q",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Zsa2O7cMq6Q",
+      "audioFile": "music/006_Half_[WSR_Release].mp3"
+    },
+    {
+      "number": 7,
+      "title": "The Space Arcade -OceanWave [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "229",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/CfI55SE-MJo/maxresdefault.jpg",
+      "videoId": "CfI55SE-MJo",
+      "youtubeUrl": "https://www.youtube.com/watch?v=CfI55SE-MJo",
+      "audioFile": "music/007_The_Space_Arcade_-OceanWave_[WSR_Release].mp3"
+    },
+    {
+      "number": 8,
+      "title": "Dangerous Desire [WSR Release]",
+      "artist": "SUNDMAN",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "634",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg",
+      "videoId": "nNoB1PNwWgA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=nNoB1PNwWgA",
+      "audioFile": "music/008_Dangerous_Desire_[WSR_Release].mp3"
+    },
+    {
+      "number": 9,
+      "title": "I`m Not Ok [WSR Release]",
+      "artist": "Lovely Falcon",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "52",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/lbjht9ZXvLY/maxresdefault.jpg",
+      "videoId": "lbjht9ZXvLY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=lbjht9ZXvLY",
+      "audioFile": "music/009_I`m_Not_Ok_[WSR_Release].mp3"
+    },
+    {
+      "number": 10,
+      "title": "Another Night (edumps Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "494",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/OUWRAN7jRXc/maxresdefault.jpg",
+      "videoId": "OUWRAN7jRXc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=OUWRAN7jRXc",
+      "audioFile": "music/010_Another_Night_(edumps_Cover)_[WSR_Release].mp3"
+    },
+    {
+      "number": 11,
+      "title": "Fade (YTM Old Style Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "897",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/KWycVQL5pS0/maxresdefault.jpg",
+      "videoId": "KWycVQL5pS0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=KWycVQL5pS0",
+      "audioFile": "music/011_Fade_(YTM_Old_Style_Cover)_[WSR_Release].mp3"
+    },
+    {
+      "number": 12,
+      "title": "Unsure (Amir Zul Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "16.0M",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/QlK9Sd6IbBU/maxresdefault.jpg",
+      "videoId": "QlK9Sd6IbBU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QlK9Sd6IbBU",
+      "audioFile": "music/012_Unsure_(Amir_Zul_Cover)_[WSR_Release].mp3"
+    },
+    {
+      "number": 13,
+      "title": "CIFU & AVVI- Another Night feat. Betsy Erickson [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "192",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/49Kuz3rIlSY/maxresdefault.jpg",
+      "videoId": "49Kuz3rIlSY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=49Kuz3rIlSY",
+      "audioFile": "music/013_CIFU_&_AVVI-_Another_Night_feat._Betsy_Erickson_[W.mp3"
+    },
+    {
+      "number": 14,
+      "title": "Orbital [WSR Release]",
+      "artist": "Lindsay Lund",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "127",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/gu_iSXXKavk/maxresdefault.jpg",
+      "videoId": "gu_iSXXKavk",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gu_iSXXKavk",
+      "audioFile": "music/014_Orbital_[WSR_Release].mp3"
+    },
+    {
+      "number": 15,
+      "title": "What Was I Made For (Awaken Soul Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "202",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/wdieag2o1sg/maxresdefault.jpg",
+      "videoId": "wdieag2o1sg",
+      "youtubeUrl": "https://www.youtube.com/watch?v=wdieag2o1sg",
+      "audioFile": "music/015_What_Was_I_Made_For_(Awaken_Soul_Cover)_[WSR_Relea.mp3"
+    },
+    {
+      "number": 16,
+      "title": "Are You With Me? (CIFU Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "470",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/_iSJcDekxyc/maxresdefault.jpg",
+      "videoId": "_iSJcDekxyc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_iSJcDekxyc",
+      "audioFile": "music/016_Are_You_With_Me_(CIFU_Cover)_[WSR_Release].mp3"
+    },
+    {
+      "number": 17,
+      "title": "Fou [WSR Release]",
+      "artist": "M.T",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "83",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/oqLeeNKXz5Y/maxresdefault.jpg",
+      "videoId": "oqLeeNKXz5Y",
+      "youtubeUrl": "https://www.youtube.com/watch?v=oqLeeNKXz5Y",
+      "audioFile": "music/017_Fou_[WSR_Release].mp3"
+    },
+    {
+      "number": 18,
+      "title": "Danger! [WSR Release]",
+      "artist": "TANN3R",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "90",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/_0RyUjQn7oU/maxresdefault.jpg",
+      "videoId": "_0RyUjQn7oU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_0RyUjQn7oU",
+      "audioFile": "music/018_Danger!_[WSR_Release].mp3"
+    },
+    {
+      "number": 19,
+      "title": "Death Rave [WSR Release]",
+      "artist": "M4R1US BP",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "362",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/qdHO5R2w6Q0/maxresdefault.jpg",
+      "videoId": "qdHO5R2w6Q0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qdHO5R2w6Q0",
+      "audioFile": "music/019_Death_Rave_[WSR_Release].mp3"
+    },
+    {
+      "number": 20,
+      "title": "Fire [WSR Release]",
+      "artist": "HankX ft. Iva Rii",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "60",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/qDC7bO25kEQ/maxresdefault.jpg",
+      "videoId": "qDC7bO25kEQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qDC7bO25kEQ",
+      "audioFile": "music/020_Fire_[WSR_Release].mp3"
+    },
+    {
+      "number": 21,
+      "title": "She's The Only One For Me  [WSR Release]",
+      "artist": "Paul Archer",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "155",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/vLm4YJJH778/maxresdefault.jpg",
+      "videoId": "vLm4YJJH778",
+      "youtubeUrl": "https://www.youtube.com/watch?v=vLm4YJJH778",
+      "audioFile": "music/021_She's_The_Only_One_For_Me_[WSR_Release].mp3"
+    },
+    {
+      "number": 22,
+      "title": "Sapruca [WSR Release]",
+      "artist": "el yobis yt",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "512",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg",
+      "videoId": "sgzljoYpitA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=sgzljoYpitA",
+      "audioFile": "music/022_Sapruca_[WSR_Release].mp3"
+    },
+    {
+      "number": 23,
+      "title": "Greedy (edumps Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "391",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/Q7ljk06hgVA/maxresdefault.jpg",
+      "videoId": "Q7ljk06hgVA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Q7ljk06hgVA",
+      "audioFile": "music/023_Greedy_(edumps_Cover)_[WSR_Release].mp3"
+    },
+    {
+      "number": 24,
+      "title": "Trinity [WSR Release]",
+      "artist": "The Space Arcade",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "345",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/Du4_wl5tFm0/maxresdefault.jpg",
+      "videoId": "Du4_wl5tFm0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Du4_wl5tFm0",
+      "audioFile": "music/024_Trinity_[WSR_Release].mp3"
+    },
+    {
+      "number": 25,
+      "title": "Spirits Vip (feat.M4R1US BP) [WSR RELEASE]",
+      "artist": "edumps",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "503",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg",
+      "videoId": "fBmLJHpSIQU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fBmLJHpSIQU",
+      "audioFile": "music/025_Spirits_Vip_(feat.M4R1US_BP)_[WSR_RELEASE].mp3"
+    },
+    {
+      "number": 26,
+      "title": "Uh Na Na Na (edumps Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "210",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/2ofe9EF96SA/maxresdefault.jpg",
+      "videoId": "2ofe9EF96SA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=2ofe9EF96SA",
+      "audioFile": "music/026_Uh_Na_Na_Na_(edumps_Cover)_[WSR_Release].mp3"
+    },
+    {
+      "number": 27,
+      "title": "UH NA NA NA [WSR Release]",
+      "artist": "LionJhon",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "146",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/_cA3P2xMWuA/maxresdefault.jpg",
+      "videoId": "_cA3P2xMWuA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_cA3P2xMWuA",
+      "audioFile": "music/027_UH_NA_NA_NA_[WSR_Release].mp3"
+    },
+    {
+      "number": 28,
+      "title": "Summer Time (Praveen Stakez Cover) [WSR x NCR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "151",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/VsYGYIg9ihE/maxresdefault.jpg",
+      "videoId": "VsYGYIg9ihE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=VsYGYIg9ihE",
+      "audioFile": "music/028_Summer_Time_(Praveen_Stakez_Cover)_[WSR_x_NCR_Rele.mp3"
+    },
+    {
+      "number": 29,
+      "title": "Lost (DJ E.J Cover)[WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "436",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/IcDfqcGsQG8/maxresdefault.jpg",
+      "videoId": "IcDfqcGsQG8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=IcDfqcGsQG8",
+      "audioFile": "music/029_Lost_(DJ_E.J_Cover)[WSR_Release].mp3"
+    },
+    {
+      "number": 30,
+      "title": "Lights Above You [WSR Release]",
+      "artist": "Roadtownboy",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "792",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg",
+      "videoId": "F8r22WDoBaY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=F8r22WDoBaY",
+      "audioFile": "music/030_Lights_Above_You_[WSR_Release].mp3"
+    }
+  ],
+  "artists": [
+    {
+      "name": "MIRZUL",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "YTM x edumps",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/kEFhQEQm2ZM/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/kEFhQEQm2ZM/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "World Studio Records",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 12 releases on the label.",
+      "image": "https://i.ytimg.com/vi/8Rab-4lgOCM/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/8Rab-4lgOCM/maxresdefault.jpg",
+      "tracks": 12,
+      "followers": "4500K",
+      "streams": "450M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "YTM",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/bn779nghq2Q/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/bn779nghq2Q/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "J.H.L",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 2 releases on the label.",
+      "image": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg",
+      "tracks": 2,
+      "followers": "1200K",
+      "streams": "120M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "SUNDMAN",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "Lovely Falcon",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/lbjht9ZXvLY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/lbjht9ZXvLY/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "Lindsay Lund",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/gu_iSXXKavk/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/gu_iSXXKavk/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "M.T",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/oqLeeNKXz5Y/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/oqLeeNKXz5Y/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "TANN3R",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/_0RyUjQn7oU/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_0RyUjQn7oU/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "M4R1US BP",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/qdHO5R2w6Q0/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/qdHO5R2w6Q0/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "HankX ft. Iva Rii",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/qDC7bO25kEQ/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/qDC7bO25kEQ/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "Paul Archer",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/vLm4YJJH778/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/vLm4YJJH778/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "el yobis yt",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "The Space Arcade",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/Du4_wl5tFm0/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/Du4_wl5tFm0/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "edumps",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "LionJhon",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/_cA3P2xMWuA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_cA3P2xMWuA/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    },
+    {
+      "name": "Roadtownboy",
+      "genres": [
+        "Electronic"
+      ],
+      "bio": "Electronic music producer signed to World Studio Records. 1 releases on the label.",
+      "image": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg",
+      "tracks": 1,
+      "followers": "0K",
+      "streams": "0.0M",
+      "country": "🌍 Global"
+    }
+  ]
+}

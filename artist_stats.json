@@ -1,0 +1,398 @@
+{
+  "topReleases": [
+    {
+      "number": 3,
+      "title": "Beautiful Moon (Tibo Walker) [WSR X NCR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "29.0M",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/8Rab-4lgOCM/maxresdefault.jpg",
+      "videoId": "8Rab-4lgOCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8Rab-4lgOCM",
+      "audioFile": "music/003_Beautiful_Moon_(Tibo_Walker)_[WSR_X_NCR_Release].mp3",
+      "viewsNum": 29000000
+    },
+    {
+      "number": 12,
+      "title": "Unsure (Amir Zul Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "16.0M",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/QlK9Sd6IbBU/maxresdefault.jpg",
+      "videoId": "QlK9Sd6IbBU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QlK9Sd6IbBU",
+      "audioFile": "music/012_Unsure_(Amir_Zul_Cover)_[WSR_Release].mp3",
+      "viewsNum": 16000000
+    },
+    {
+      "number": 6,
+      "title": "Half [WSR Release]",
+      "artist": "J.H.L",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "12.0M",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/maxresdefault.jpg",
+      "videoId": "Zsa2O7cMq6Q",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Zsa2O7cMq6Q",
+      "audioFile": "music/006_Half_[WSR_Release].mp3",
+      "viewsNum": 12000000
+    },
+    {
+      "number": 11,
+      "title": "Fade (YTM Old Style Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "897",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/KWycVQL5pS0/maxresdefault.jpg",
+      "videoId": "KWycVQL5pS0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=KWycVQL5pS0",
+      "audioFile": "music/011_Fade_(YTM_Old_Style_Cover)_[WSR_Release].mp3",
+      "viewsNum": 897
+    },
+    {
+      "number": 30,
+      "title": "Lights Above You [WSR Release]",
+      "artist": "Roadtownboy",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "792",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg",
+      "videoId": "F8r22WDoBaY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=F8r22WDoBaY",
+      "audioFile": "music/030_Lights_Above_You_[WSR_Release].mp3",
+      "viewsNum": 792
+    },
+    {
+      "number": 8,
+      "title": "Dangerous Desire [WSR Release]",
+      "artist": "SUNDMAN",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "634",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg",
+      "videoId": "nNoB1PNwWgA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=nNoB1PNwWgA",
+      "audioFile": "music/008_Dangerous_Desire_[WSR_Release].mp3",
+      "viewsNum": 634
+    },
+    {
+      "number": 22,
+      "title": "Sapruca [WSR Release]",
+      "artist": "el yobis yt",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "512",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg",
+      "videoId": "sgzljoYpitA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=sgzljoYpitA",
+      "audioFile": "music/022_Sapruca_[WSR_Release].mp3",
+      "viewsNum": 512
+    },
+    {
+      "number": 25,
+      "title": "Spirits Vip (feat.M4R1US BP) [WSR RELEASE]",
+      "artist": "edumps",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "503",
+      "duration": "3:45",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg",
+      "videoId": "fBmLJHpSIQU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fBmLJHpSIQU",
+      "audioFile": "music/025_Spirits_Vip_(feat.M4R1US_BP)_[WSR_RELEASE].mp3",
+      "viewsNum": 503
+    }
+  ],
+  "topArtists": [
+    {
+      "name": "J.H.L",
+      "totalViews": 12000377,
+      "tracks": [
+        {
+          "title": "Half [WSR Release]",
+          "views": 12000000,
+          "videoId": "Zsa2O7cMq6Q"
+        },
+        {
+          "title": "Fearless [WSR Release]",
+          "views": 377,
+          "videoId": "-nCqg5BsGQY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg"
+    },
+    {
+      "name": "Roadtownboy",
+      "totalViews": 792,
+      "tracks": [
+        {
+          "title": "Lights Above You [WSR Release]",
+          "views": 792,
+          "videoId": "F8r22WDoBaY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg"
+    },
+    {
+      "name": "SUNDMAN",
+      "totalViews": 634,
+      "tracks": [
+        {
+          "title": "Dangerous Desire [WSR Release]",
+          "views": 634,
+          "videoId": "nNoB1PNwWgA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg"
+    }
+  ],
+  "allArtists": [
+    {
+      "name": "J.H.L",
+      "totalViews": 12000377,
+      "tracks": [
+        {
+          "title": "Half [WSR Release]",
+          "views": 12000000,
+          "videoId": "Zsa2O7cMq6Q"
+        },
+        {
+          "title": "Fearless [WSR Release]",
+          "views": 377,
+          "videoId": "-nCqg5BsGQY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg"
+    },
+    {
+      "name": "Roadtownboy",
+      "totalViews": 792,
+      "tracks": [
+        {
+          "title": "Lights Above You [WSR Release]",
+          "views": 792,
+          "videoId": "F8r22WDoBaY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg"
+    },
+    {
+      "name": "SUNDMAN",
+      "totalViews": 634,
+      "tracks": [
+        {
+          "title": "Dangerous Desire [WSR Release]",
+          "views": 634,
+          "videoId": "nNoB1PNwWgA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg"
+    },
+    {
+      "name": "el yobis yt",
+      "totalViews": 512,
+      "tracks": [
+        {
+          "title": "Sapruca [WSR Release]",
+          "views": 512,
+          "videoId": "sgzljoYpitA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg"
+    },
+    {
+      "name": "edumps",
+      "totalViews": 503,
+      "tracks": [
+        {
+          "title": "Spirits Vip (feat.M4R1US BP) [WSR RELEASE]",
+          "views": 503,
+          "videoId": "fBmLJHpSIQU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg"
+    },
+    {
+      "name": "YTM x edumps",
+      "totalViews": 391,
+      "tracks": [
+        {
+          "title": "Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]",
+          "views": 391,
+          "videoId": "kEFhQEQm2ZM"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/kEFhQEQm2ZM/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/kEFhQEQm2ZM/maxresdefault.jpg"
+    },
+    {
+      "name": "M4R1US BP",
+      "totalViews": 362,
+      "tracks": [
+        {
+          "title": "Death Rave [WSR Release]",
+          "views": 362,
+          "videoId": "qdHO5R2w6Q0"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/qdHO5R2w6Q0/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/qdHO5R2w6Q0/maxresdefault.jpg"
+    },
+    {
+      "name": "The Space Arcade",
+      "totalViews": 345,
+      "tracks": [
+        {
+          "title": "Trinity [WSR Release]",
+          "views": 345,
+          "videoId": "Du4_wl5tFm0"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/Du4_wl5tFm0/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/Du4_wl5tFm0/maxresdefault.jpg"
+    },
+    {
+      "name": "YTM",
+      "totalViews": 187,
+      "tracks": [
+        {
+          "title": "i miss you [WSR Release]",
+          "views": 187,
+          "videoId": "bn779nghq2Q"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/bn779nghq2Q/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/bn779nghq2Q/maxresdefault.jpg"
+    },
+    {
+      "name": "Paul Archer",
+      "totalViews": 155,
+      "tracks": [
+        {
+          "title": "She's The Only One For Me  [WSR Release]",
+          "views": 155,
+          "videoId": "vLm4YJJH778"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/vLm4YJJH778/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/vLm4YJJH778/maxresdefault.jpg"
+    },
+    {
+      "name": "LionJhon",
+      "totalViews": 146,
+      "tracks": [
+        {
+          "title": "UH NA NA NA [WSR Release]",
+          "views": 146,
+          "videoId": "_cA3P2xMWuA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/_cA3P2xMWuA/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_cA3P2xMWuA/maxresdefault.jpg"
+    },
+    {
+      "name": "Lindsay Lund",
+      "totalViews": 127,
+      "tracks": [
+        {
+          "title": "Orbital [WSR Release]",
+          "views": 127,
+          "videoId": "gu_iSXXKavk"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/gu_iSXXKavk/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/gu_iSXXKavk/maxresdefault.jpg"
+    },
+    {
+      "name": "TANN3R",
+      "totalViews": 90,
+      "tracks": [
+        {
+          "title": "Danger! [WSR Release]",
+          "views": 90,
+          "videoId": "_0RyUjQn7oU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/_0RyUjQn7oU/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_0RyUjQn7oU/maxresdefault.jpg"
+    },
+    {
+      "name": "M.T",
+      "totalViews": 83,
+      "tracks": [
+        {
+          "title": "Fou [WSR Release]",
+          "views": 83,
+          "videoId": "oqLeeNKXz5Y"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/oqLeeNKXz5Y/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/oqLeeNKXz5Y/maxresdefault.jpg"
+    },
+    {
+      "name": "HankX ft. Iva Rii",
+      "totalViews": 60,
+      "tracks": [
+        {
+          "title": "Fire [WSR Release]",
+          "views": 60,
+          "videoId": "qDC7bO25kEQ"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/qDC7bO25kEQ/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/qDC7bO25kEQ/maxresdefault.jpg"
+    },
+    {
+      "name": "Lovely Falcon",
+      "totalViews": 52,
+      "tracks": [
+        {
+          "title": "I`m Not Ok [WSR Release]",
+          "views": 52,
+          "videoId": "lbjht9ZXvLY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/lbjht9ZXvLY/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/lbjht9ZXvLY/maxresdefault.jpg"
+    },
+    {
+      "name": "MIRZUL",
+      "totalViews": 2,
+      "tracks": [
+        {
+          "title": "CAHAYA [WSR Release]",
+          "views": 2,
+          "videoId": "UFynmEtoUVI"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg"
+    }
+  ]
+}

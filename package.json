@@ -1,0 +1,19 @@
+{
+  "name": "wsr-website",
+  "version": "1.0.0",
+  "description": "World Studio Records Website",
+  "main": "index.html",
+  "scripts": {
+    "download": "node download_music.js",
+    "update": "node puppeteer_scraper.js && node download_music.js",
+    "scrape": "node puppeteer_scraper.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer": "^24.34.0"
+  }
+}
