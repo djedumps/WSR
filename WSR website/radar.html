@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="World Studio Records Radar - Discover emerging artists and producers">
+    <title>Radar - World Studio Records</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="logo WSR.png" alt="WSR" class="navbar-logo-img">
+                <span>WSR</span>
+            </a>
+            
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="releases.html" class="navbar-link">Releases</a></li>
+                <li><a href="#artists" class="navbar-link">Artists</a></li>
+                <li><a href="radar.html" class="navbar-link active">Radar</a></li>
+                <li><a href="#producers" class="navbar-link">Producers</a></li>
+                <li><a href="#creators" class="navbar-link">Creators</a></li>
+                <li><a href="#news" class="navbar-link">News</a></li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="#submit" class="btn btn-primary btn-sm">Submit Demo</a>
+                <button class="profile-btn" id="profileBtn" aria-label="User profile and login" title="Login / Sign up">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </button>
+                <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">Radar</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="talent-hero">
+        <div class="container">
+            <div class="talent-hero-content">
+                <h1>Radar</h1>
+                <p>From Portugal to the World - Discover emerging producers and help us find the next big thing</p>
+                <div class="talent-stats">
+                    <div class="talent-stat">
+                        <span class="talent-stat-value">1,247</span>
+                        <span class="talent-stat-label">Artists Submitted</span>
+                    </div>
+                    <div class="talent-stat">
+                        <span class="talent-stat-value">156</span>
+                        <span class="talent-stat-label">Tracks Reviewed</span>
+                    </div>
+                    <div class="talent-stat">
+                        <span class="talent-stat-value">23</span>
+                        <span class="talent-stat-label">Signed Artists</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="talent-section">
+        <div class="container">
+            <div class="talent-instructions">
+                <div class="instruction-item">
+                    <div class="instruction-icon">👈</div>
+                    <p>Swipe <strong>left</strong> or press <strong>X</strong> to pass</p>
+                </div>
+                <div class="instruction-item">
+                    <div class="instruction-icon">❤️</div>
+                    <p>Swipe <strong>right</strong> or press <strong>♥</strong> to support</p>
+                </div>
+            </div>
+
+            <div class="swipe-container" id="swipeContainer">
+                <div class="swipe-card" data-id="1">
+                    <div class="swipe-card-badge like">LIKE</div>
+                    <div class="swipe-card-badge pass">PASS</div>
+                    <img src="https://images.unsplash.com/photo-1571266028243-d220b925a05c?w=800" alt="Artist" class="swipe-card-image">
+                    <div class="swipe-card-content">
+                        <div class="swipe-card-header">
+                            <h3 class="swipe-card-name">PHANTOM</h3>
+                            <span class="swipe-card-location">🌍 London, UK</span>
+                        </div>
+                        <div class="swipe-card-genres">
+                            <span class="genre-tag">Techno</span>
+                            <span class="genre-tag">Progressive House</span>
+                        </div>
+                        <p class="swipe-card-bio">25yo producer blending dark techno with melodic progressions. Influenced by Tale of Us and Stephan Bodzin.</p>
+                        <div class="swipe-card-stats">
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                                <span>124K</span>
+                            </div>
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                <span>8.2K</span>
+                            </div>
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>3.5K</span>
+                            </div>
+                        </div>
+                        <audio controls class="swipe-card-audio">
+                            <source src="#" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="swipe-card" data-id="2">
+                    <div class="swipe-card-badge like">LIKE</div>
+                    <div class="swipe-card-badge pass">PASS</div>
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800" alt="Artist" class="swipe-card-image">
+                    <div class="swipe-card-content">
+                        <div class="swipe-card-header">
+                            <h3 class="swipe-card-name">AURORA BEATS</h3>
+                            <span class="swipe-card-location">🌍 Los Angeles, USA</span>
+                        </div>
+                        <div class="swipe-card-genres">
+                            <span class="genre-tag">Future Bass</span>
+                            <span class="genre-tag">Melodic Dubstep</span>
+                        </div>
+                        <p class="swipe-card-bio">Female producer creating ethereal soundscapes with powerful bass drops. Featured on NCS & Monstercat.</p>
+                        <div class="swipe-card-stats">
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                                <span>856K</span>
+                            </div>
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                <span>42K</span>
+                            </div>
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>18K</span>
+                            </div>
+                        </div>
+                        <audio controls class="swipe-card-audio">
+                            <source src="#" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="swipe-card" data-id="3">
+                    <div class="swipe-card-badge like">LIKE</div>
+                    <div class="swipe-card-badge pass">PASS</div>
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800" alt="Artist" class="swipe-card-image">
+                    <div class="swipe-card-content">
+                        <div class="swipe-card-header">
+                            <h3 class="swipe-card-name">NEON PULSE</h3>
+                            <span class="swipe-card-location">🌍 Berlin, Germany</span>
+                        </div>
+                        <div class="swipe-card-genres">
+                            <span class="genre-tag">Synthwave</span>
+                            <span class="genre-tag">Retrowave</span>
+                        </div>
+                        <p class="swipe-card-bio">Bringing back 80s vibes with modern production. Inspired by The Midnight and FM-84.</p>
+                        <div class="swipe-card-stats">
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                                <span>342K</span>
+                            </div>
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                <span>15K</span>
+                            </div>
+                            <div class="card-stat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>9.8K</span>
+                            </div>
+                        </div>
+                        <audio controls class="swipe-card-audio">
+                            <source src="#" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="swipe-empty" id="swipeEmpty">
+                    <div class="swipe-empty-icon">🎵</div>
+                    <h3>That's all for now!</h3>
+                    <p>Check back soon for more talented artists</p>
+                    <button class="btn btn-primary btn-lg" onclick="location.reload()">Restart</button>
+                </div>
+            </div>
+
+            <div class="swipe-actions">
+                <button class="swipe-btn swipe-btn-pass" id="passBtn" aria-label="Pass this artist" title="Pass (Press X or ←)">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+                <button class="swipe-btn swipe-btn-like" id="likeBtn" aria-label="Like this artist" title="Like (Press L or →)">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="swipe-counter">
+                <span id="counterText">3 artists remaining</span>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal" role="dialog" aria-labelledby="authModalTitle" aria-modal="true">
+        <div class="auth-modal-overlay" id="authModalOverlay"></div>
+        <div class="auth-modal-content">
+            <button class="auth-modal-close" id="authModalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login" id="loginTab">Login</button>
+                <button class="auth-tab" data-tab="signup" id="signupTab">Sign Up</button>
+            </div>
+
+            <div class="auth-form-container active" id="loginForm">
+                <h2 id="authModalTitle">Welcome Back</h2>
+                <p class="auth-subtitle">Sign in to access your account</p>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail3">Email</label>
+                        <input type="email" id="loginEmail3" class="input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword3">Password</label>
+                        <input type="password" id="loginPassword3" class="input" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                </form>
+            </div>
+
+            <div class="auth-form-container" id="signupForm">
+                <h2>Create Account</h2>
+                <p class="auth-subtitle">Join the WSR community</p>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="signupName3">Full Name</label>
+                        <input type="text" id="signupName3" class="input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail3">Email</label>
+                        <input type="email" id="signupEmail3" class="input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword3">Password</label>
+                        <input type="password" id="signupPassword3" class="input" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="navbar-logo">
+                        <img src="logo WSR.png" alt="WSR" class="navbar-logo-img">
+                        <span>WSR</span>
+                    </div>
+                    <p class="footer-description">From Portugal to the World.</p>
+                    <div class="footer-socials">
+                        <a href="#spotify" class="footer-social-link" aria-label="Spotify">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                        </a>
+                        <a href="#soundcloud" class="footer-social-link" aria-label="SoundCloud">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815z"/>
+                            </svg>
+                        </a>
+                        <a href="#youtube" class="footer-social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="#instagram" class="footer-social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Music</h4>
+                    <ul class="footer-links">
+                        <li><a href="releases.html">Releases</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#playlists">Playlists</a></li>
+                        <li><a href="#genres">Genres</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#producers">Producers Hub</a></li>
+                        <li><a href="#creators">For Creators</a></li>
+                        <li><a href="#submit">Submit Demo</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 World Studio Records. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/swipe.js"></script>
+</body>
+</html>

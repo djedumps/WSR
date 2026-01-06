@@ -1,0 +1,2327 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSR - Atualização de Dados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #00e5ff;
+            margin-bottom: 30px;
+        }
+        .track-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .track-header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .track-thumbnail {
+            flex-shrink: 0;
+        }
+        .track-thumbnail img {
+            width: 200px;
+            border-radius: 8px;
+        }
+        .track-info {
+            flex-grow: 1;
+        }
+        .track-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00e5ff;
+            margin-bottom: 5px;
+        }
+        .track-artist {
+            font-size: 16px;
+            color: #a259ff;
+            margin-bottom: 15px;
+        }
+        .track-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .data-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .data-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .data-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .input-value {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .link-btn {
+            background: rgba(0, 229, 255, 0.2);
+            color: #00e5ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .link-btn:hover {
+            background: rgba(0, 229, 255, 0.4);
+        }
+        .save-btn {
+            background: #00e5ff;
+            color: #0a0e27;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .save-btn:hover {
+            background: #00b8cc;
+        }
+        .export-section {
+            position: sticky;
+            top: 20px;
+            background: rgba(0, 229, 255, 0.1);
+            border: 2px solid #00e5ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .export-btn {
+            background: #00e5ff;
+            color: #0a0e27;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .export-btn:hover {
+            background: #00b8cc;
+        }
+        .progress {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 WSR - Atualização de Dados das Músicas</h1>
+        
+        <div class="export-section">
+            <h2>📊 Progresso de Atualização</h2>
+            <p class="progress">Músicas atualizadas: <span id="progress">0</span>/57</p>
+            <button class="export-btn" onclick="exportJSON()">💾 Exportar JSON Atualizado</button>
+        </div>
+
+        <div id="tracks">
+
+        <div class="track-card" data-index="0">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg" alt="Sunshine [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Sunshine [WSR Release]</div>
+                    <div class="track-artist">Roadtownboy</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-0" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-0" value="128" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-0" value="39.0M" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-0" value="39000000" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/wPnjckHdcc8/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=wPnjckHdcc8" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Roadtownboy%20Sunshine" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="1">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/8Rab-4lgOCM/hqdefault.jpg" alt="Beautiful Moon (Tibo Walker) [WSR X NCR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Beautiful Moon (Tibo Walker) [WSR X NCR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-1" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-1" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-1" value="29.0M" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-1" value="29000000" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/8Rab-4lgOCM/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=8Rab-4lgOCM" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Beautiful%20Moon%20(Tibo%20Walker)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="2">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg" alt="Unsure (Amir Zul Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Unsure (Amir Zul Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-2" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-2" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-2" value="16.0M" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-2" value="16000000" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/QlK9Sd6IbBU/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=QlK9Sd6IbBU" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Unsure%20(Amir%20Zul%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="3">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg" alt="Half [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Half [WSR Release]</div>
+                    <div class="track-artist">J.H.L</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-3" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-3" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-3" value="12.0M" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-3" value="12000000" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/Zsa2O7cMq6Q/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=Zsa2O7cMq6Q" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=J.H.L%20Half" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="4">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/gdjUBrnwW_I/hqdefault.jpg" alt="The Spectre (YTM Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">The Spectre (YTM Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-4" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-4" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-4" value="8.0M" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-4" value="8000000" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/gdjUBrnwW_I/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=gdjUBrnwW_I" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20The%20Spectre%20(YTM%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="5">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/3qpopktEh7k/hqdefault.jpg" alt="FRIENDS [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">FRIENDS [WSR Release]</div>
+                    <div class="track-artist">DJ E.J</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-5" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-5" value="79" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-5" value="1.0M" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-5" value="1000000" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/3qpopktEh7k/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=3qpopktEh7k" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=DJ%20E.J%20FRIENDS" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="6">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/KWycVQL5pS0/hqdefault.jpg" alt="Fade (YTM Old Style Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Fade (YTM Old Style Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-6" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-6" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-6" value="897" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-6" value="897" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/KWycVQL5pS0/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=KWycVQL5pS0" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Fade%20(YTM%20Old%20Style%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="7">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/zUh9kV3wG0E/hqdefault.jpg" alt="IMPERADOR PHONK MANO [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">IMPERADOR PHONK MANO [WSR Release]</div>
+                    <div class="track-artist">EMPEROR PLAYA</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-7" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-7" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-7" value="859" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-7" value="859" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/zUh9kV3wG0E/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=zUh9kV3wG0E" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=EMPEROR%20PLAYA%20IMPERADOR%20PHONK%20MANO" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="8">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/F8r22WDoBaY/hqdefault.jpg" alt="Lights Above You [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Lights Above You [WSR Release]</div>
+                    <div class="track-artist">Roadtownboy</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-8" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-8" value="124" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-8" value="792" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-8" value="792" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=F8r22WDoBaY" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Roadtownboy%20Lights%20Above%20You" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="9">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/e6xlTEKnsXQ/hqdefault.jpg" alt="Summer Time (DJ E.J Cover) [WSR X NCR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Summer Time (DJ E.J Cover) [WSR X NCR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-9" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-9" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-9" value="698" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-9" value="698" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/e6xlTEKnsXQ/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=e6xlTEKnsXQ" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Summer%20Time%20(DJ%20E.J%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="10">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/pcyfwbZQhWE/hqdefault.jpg" alt="Midnight [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Midnight [WSR Release]</div>
+                    <div class="track-artist">M4R1US BP</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-10" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-10" value="128" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-10" value="690" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-10" value="690" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/pcyfwbZQhWE/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=pcyfwbZQhWE" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=M4R1US%20BP%20Midnight" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="11">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/nNoB1PNwWgA/hqdefault.jpg" alt="Dangerous Desire [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Dangerous Desire [WSR Release]</div>
+                    <div class="track-artist">SUNDMAN</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-11" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-11" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-11" value="634" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-11" value="634" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=nNoB1PNwWgA" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=SUNDMAN%20Dangerous%20Desire" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="12">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/aAjYC5sLCOo/hqdefault.jpg" alt="OBLIVION (Instrumental) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">OBLIVION (Instrumental) [WSR Release]</div>
+                    <div class="track-artist">DJ E.J</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-12" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-12" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-12" value="622" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-12" value="622" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/aAjYC5sLCOo/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=aAjYC5sLCOo" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=DJ%20E.J%20OBLIVION%20(Instrumental)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="13">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/r4ltKQYovv0/hqdefault.jpg" alt="Lua (edumps Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Lua (edumps Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-13" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-13" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-13" value="597" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-13" value="597" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/r4ltKQYovv0/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=r4ltKQYovv0" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Lua%20(edumps%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="14">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/a4bMiEZbr5k/hqdefault.jpg" alt="There For You [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">There For You [WSR Release]</div>
+                    <div class="track-artist">M4R1USBP X ZuL-K9</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-14" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-14" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-14" value="542" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-14" value="542" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/a4bMiEZbr5k/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=a4bMiEZbr5k" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=M4R1USBP%20X%20ZuL-K9%20There%20For%20You" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="15">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/sgzljoYpitA/hqdefault.jpg" alt="Sapruca [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Sapruca [WSR Release]</div>
+                    <div class="track-artist">el yobis yt</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-15" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-15" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-15" value="512" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-15" value="512" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/sgzljoYpitA/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=sgzljoYpitA" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=el%20yobis%20yt%20Sapruca" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="16">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/LHA2HgYtUdc/hqdefault.jpg" alt="Unity (M4R1US BP Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Unity (M4R1US BP Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-16" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-16" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-16" value="506" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-16" value="506" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/LHA2HgYtUdc/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=LHA2HgYtUdc" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Unity%20(M4R1US%20BP%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="17">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/fBmLJHpSIQU/hqdefault.jpg" alt="Spirits Vip (feat.M4R1US BP) [WSR RELEASE]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Spirits Vip (feat.M4R1US BP) [WSR RELEASE]</div>
+                    <div class="track-artist">edumps</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-17" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-17" value="128" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-17" value="503" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-17" value="503" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/fBmLJHpSIQU/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=fBmLJHpSIQU" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=edumps%20Spirits%20Vip%20(feat.M4R1US%20BP)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="18">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/OUWRAN7jRXc/hqdefault.jpg" alt="Another Night (edumps Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Another Night (edumps Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-18" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-18" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-18" value="494" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-18" value="494" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/OUWRAN7jRXc/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=OUWRAN7jRXc" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Another%20Night%20(edumps%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="19">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/myT2FpPye9I/hqdefault.jpg" alt="Summer Love [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Summer Love [WSR Release]</div>
+                    <div class="track-artist">edumps</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-19" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-19" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-19" value="476" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-19" value="476" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/myT2FpPye9I/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=myT2FpPye9I" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=edumps%20Summer%20Love" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="20">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/_iSJcDekxyc/hqdefault.jpg" alt="Are You With Me? (CIFU Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Are You With Me? (CIFU Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-20" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-20" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-20" value="470" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-20" value="470" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/_iSJcDekxyc/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=_iSJcDekxyc" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Are%20You%20With%20Me%3F%20(CIFU%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="21">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/IcDfqcGsQG8/hqdefault.jpg" alt="Lost (DJ E.J Cover)[WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Lost (DJ E.J Cover)[WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-21" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-21" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-21" value="436" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-21" value="436" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/IcDfqcGsQG8/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=IcDfqcGsQG8" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Lost%20(DJ%20E.J%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="22">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/a1PXwuei1OM/hqdefault.jpg" alt="Lift [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Lift [WSR Release]</div>
+                    <div class="track-artist">Roadtownboy</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-22" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-22" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-22" value="393" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-22" value="393" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/a1PXwuei1OM/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=a1PXwuei1OM" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Roadtownboy%20Lift" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="23">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/kEFhQEQm2ZM/hqdefault.jpg" alt="Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]</div>
+                    <div class="track-artist">YTM x edumps</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-23" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-23" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-23" value="391" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-23" value="391" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/kEFhQEQm2ZM/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=kEFhQEQm2ZM" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=YTM%20x%20edumps%20Never%20Be%20The%20Same%20(Don't%20Forget%20Me%2C%20Pt.%20III)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="24">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/Q7ljk06hgVA/hqdefault.jpg" alt="Greedy (edumps Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Greedy (edumps Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-24" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-24" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-24" value="391" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-24" value="391" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/Q7ljk06hgVA/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=Q7ljk06hgVA" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Greedy%20(edumps%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="25">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/-nCqg5BsGQY/hqdefault.jpg" alt="Fearless [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Fearless [WSR Release]</div>
+                    <div class="track-artist">J.H.L</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-25" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-25" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-25" value="377" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-25" value="377" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/-nCqg5BsGQY/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=-nCqg5BsGQY" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=J.H.L%20Fearless" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="26">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/RFP4nGikv0I/hqdefault.jpg" alt="Thunderstorm [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Thunderstorm [WSR Release]</div>
+                    <div class="track-artist">Roadtownboy</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-26" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-26" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-26" value="369" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-26" value="369" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/RFP4nGikv0I/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=RFP4nGikv0I" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Roadtownboy%20Thunderstorm" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="27">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/qdHO5R2w6Q0/hqdefault.jpg" alt="Death Rave [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Death Rave [WSR Release]</div>
+                    <div class="track-artist">M4R1US BP</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-27" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-27" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-27" value="362" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-27" value="362" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/qdHO5R2w6Q0/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=qdHO5R2w6Q0" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=M4R1US%20BP%20Death%20Rave" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="28">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/Gqy_MFUxRn0/hqdefault.jpg" alt="Fade (YTM Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Fade (YTM Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-28" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-28" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-28" value="359" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-28" value="359" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/Gqy_MFUxRn0/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=Gqy_MFUxRn0" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Fade%20(YTM%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="29">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/Du4_wl5tFm0/hqdefault.jpg" alt="Trinity [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Trinity [WSR Release]</div>
+                    <div class="track-artist">The Space Arcade</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-29" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-29" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-29" value="345" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-29" value="345" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/Du4_wl5tFm0/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=Du4_wl5tFm0" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=The%20Space%20Arcade%20Trinity" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="30">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/J1rVcgVAVC0/hqdefault.jpg" alt="I Really Like You (M4R1US BP Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">I Really Like You (M4R1US BP Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-30" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-30" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-30" value="326" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-30" value="326" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/J1rVcgVAVC0/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=J1rVcgVAVC0" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20I%20Really%20Like%20You%20(M4R1US%20BP%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="31">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/d6n0F8m1glE/hqdefault.jpg" alt="Dreamy [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Dreamy [WSR Release]</div>
+                    <div class="track-artist">EMPEROR PLAYA</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-31" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-31" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-31" value="303" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-31" value="303" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/d6n0F8m1glE/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=d6n0F8m1glE" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=EMPEROR%20PLAYA%20Dreamy" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="32">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/--bwQZ8XAAI/hqdefault.jpg" alt="Emotions Master [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Emotions Master [WSR Release]</div>
+                    <div class="track-artist">M4R1US BP</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-32" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-32" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-32" value="292" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-32" value="292" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/--bwQZ8XAAI/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=--bwQZ8XAAI" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=M4R1US%20BP%20Emotions%20Master" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="33">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/pTkkS7UI-rM/hqdefault.jpg" alt="BRAZILIAN DESCE E ATIRA [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">BRAZILIAN DESCE E ATIRA [WSR Release]</div>
+                    <div class="track-artist">EMPEROR PLAYA</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-33" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-33" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-33" value="258" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-33" value="258" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/pTkkS7UI-rM/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=pTkkS7UI-rM" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=EMPEROR%20PLAYA%20BRAZILIAN%20DESCE%20E%20ATIRA" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="34">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/CfI55SE-MJo/hqdefault.jpg" alt="The Space Arcade -OceanWave [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">The Space Arcade -OceanWave [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-34" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-34" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-34" value="229" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-34" value="229" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/CfI55SE-MJo/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=CfI55SE-MJo" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20The%20Space%20Arcade%20-OceanWave" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="35">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/2gA6c7ilkKE/hqdefault.jpg" alt="Water Things [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Water Things [WSR Release]</div>
+                    <div class="track-artist">YTM</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-35" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-35" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-35" value="211" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-35" value="211" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/2gA6c7ilkKE/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=2gA6c7ilkKE" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=YTM%20Water%20Things" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="36">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/2ofe9EF96SA/hqdefault.jpg" alt="Uh Na Na Na (edumps Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Uh Na Na Na (edumps Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-36" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-36" value="124" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-36" value="210" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-36" value="210" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/2ofe9EF96SA/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=2ofe9EF96SA" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Uh%20Na%20Na%20Na%20(edumps%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="37">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/3TgDcFX0KeA/hqdefault.jpg" alt="Fade VIP [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Fade VIP [WSR Release]</div>
+                    <div class="track-artist">YTM</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-37" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-37" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-37" value="209" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-37" value="209" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/3TgDcFX0KeA/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=3TgDcFX0KeA" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=YTM%20Fade%20VIP" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="38">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/wdieag2o1sg/hqdefault.jpg" alt="What Was I Made For (Awaken Soul Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">What Was I Made For (Awaken Soul Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-38" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-38" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-38" value="202" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-38" value="202" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/wdieag2o1sg/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=wdieag2o1sg" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20What%20Was%20I%20Made%20For%20(Awaken%20Soul%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="39">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/Q2iH77ldFEs/hqdefault.jpg" alt="SPEACK [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">SPEACK [WSR Release]</div>
+                    <div class="track-artist">DJ E.J</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-39" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-39" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-39" value="194" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-39" value="194" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/Q2iH77ldFEs/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=Q2iH77ldFEs" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=DJ%20E.J%20SPEACK" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="40">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/49Kuz3rIlSY/hqdefault.jpg" alt="CIFU & AVVI- Another Night feat. Betsy Erickson [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">CIFU & AVVI- Another Night feat. Betsy Erickson [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-40" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-40" value="128" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-40" value="192" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-40" value="192" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/49Kuz3rIlSY/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=49Kuz3rIlSY" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20CIFU%20%26%20AVVI-%20Another%20Night%20feat.%20Betsy%20Erickson" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="41">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/bn779nghq2Q/hqdefault.jpg" alt="i miss you [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">i miss you [WSR Release]</div>
+                    <div class="track-artist">YTM</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-41" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-41" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-41" value="187" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-41" value="187" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/bn779nghq2Q/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=bn779nghq2Q" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=YTM%20i%20miss%20you" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="42">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/CgMjGgnwIBg/hqdefault.jpg" alt="Static World [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Static World [WSR Release]</div>
+                    <div class="track-artist">Prozvan x edumps</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-42" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-42" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-42" value="181" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-42" value="181" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/CgMjGgnwIBg/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=CgMjGgnwIBg" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Prozvan%20x%20edumps%20Static%20World" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="43">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/vLm4YJJH778/hqdefault.jpg" alt="She's The Only One For Me  [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">She's The Only One For Me  [WSR Release]</div>
+                    <div class="track-artist">Paul Archer</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-43" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-43" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-43" value="155" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-43" value="155" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/vLm4YJJH778/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=vLm4YJJH778" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Paul%20Archer%20She's%20The%20Only%20One%20For%20Me" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="44">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/VsYGYIg9ihE/hqdefault.jpg" alt="Summer Time (Praveen Stakez Cover) [WSR x NCR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Summer Time (Praveen Stakez Cover) [WSR x NCR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-44" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-44" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-44" value="151" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-44" value="151" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/VsYGYIg9ihE/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=VsYGYIg9ihE" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Summer%20Time%20(Praveen%20Stakez%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="45">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/_cA3P2xMWuA/hqdefault.jpg" alt="UH NA NA NA [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">UH NA NA NA [WSR Release]</div>
+                    <div class="track-artist">LionJhon</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-45" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-45" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-45" value="146" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-45" value="146" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/_cA3P2xMWuA/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=_cA3P2xMWuA" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=LionJhon%20UH%20NA%20NA%20NA" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="46">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/ZJRAw3EdCvo/hqdefault.jpg" alt="Summer Time (edumps & Mary Cover) [WSR x NCR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Summer Time (edumps & Mary Cover) [WSR x NCR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-46" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-46" value="124" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-46" value="140" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-46" value="140" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/ZJRAw3EdCvo/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=ZJRAw3EdCvo" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20Summer%20Time%20(edumps%20%26%20Mary%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="47">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/gu_iSXXKavk/hqdefault.jpg" alt="Orbital [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Orbital [WSR Release]</div>
+                    <div class="track-artist">Lindsay Lund</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-47" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-47" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-47" value="127" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-47" value="127" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/gu_iSXXKavk/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=gu_iSXXKavk" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Lindsay%20Lund%20Orbital" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="48">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/O4zBAJzQsGo/hqdefault.jpg" alt="DEADLINE [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">DEADLINE [WSR Release]</div>
+                    <div class="track-artist">EMPEROR PLAYA</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-48" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-48" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-48" value="123" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-48" value="123" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/O4zBAJzQsGo/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=O4zBAJzQsGo" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=EMPEROR%20PLAYA%20DEADLINE" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="49">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/4GI-DAruMNg/hqdefault.jpg" alt="I Need Your Love (edumps Cover) [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">I Need Your Love (edumps Cover) [WSR Release]</div>
+                    <div class="track-artist">World Studio Records</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-49" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-49" value="126" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-49" value="122" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-49" value="122" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/4GI-DAruMNg/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=4GI-DAruMNg" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=World%20Studio%20Records%20I%20Need%20Your%20Love%20(edumps%20Cover)" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="50">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/_0RyUjQn7oU/hqdefault.jpg" alt="Danger! [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Danger! [WSR Release]</div>
+                    <div class="track-artist">TANN3R</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-50" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-50" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-50" value="90" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-50" value="90" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/_0RyUjQn7oU/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=_0RyUjQn7oU" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=TANN3R%20Danger!" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="51">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/oqLeeNKXz5Y/hqdefault.jpg" alt="Fou [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Fou [WSR Release]</div>
+                    <div class="track-artist">M.T</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-51" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-51" value="135" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-51" value="83" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-51" value="83" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/oqLeeNKXz5Y/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=oqLeeNKXz5Y" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=M.T%20Fou" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="52">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/8nse_-4mRUU/hqdefault.jpg" alt="Summer Time [WSR X NCR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Summer Time [WSR X NCR Release]</div>
+                    <div class="track-artist">YTM</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-52" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-52" value="130" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-52" value="78" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-52" value="78" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/8nse_-4mRUU/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=8nse_-4mRUU" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=YTM%20Summer%20Time" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="53">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/nQh-YV4nUeU/hqdefault.jpg" alt="Piece Of Your Heart Cover [WSR Battle]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Piece Of Your Heart Cover [WSR Battle]</div>
+                    <div class="track-artist">edumps Vs M4R1US BP</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-53" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-53" value="132" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-53" value="75" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-53" value="75" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/nQh-YV4nUeU/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=nQh-YV4nUeU" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=edumps%20Vs%20M4R1US%20BP%20Piece%20Of%20Your%20Heart%20Cover" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="54">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/qDC7bO25kEQ/hqdefault.jpg" alt="Fire [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">Fire [WSR Release]</div>
+                    <div class="track-artist">HankX ft. Iva Rii</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-54" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-54" value="128" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-54" value="60" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-54" value="60" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/qDC7bO25kEQ/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=qDC7bO25kEQ" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=HankX%20ft.%20Iva%20Rii%20Fire" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="55">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/lbjht9ZXvLY/hqdefault.jpg" alt="I`m Not Ok [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">I`m Not Ok [WSR Release]</div>
+                    <div class="track-artist">Lovely Falcon</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-55" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-55" value="62" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-55" value="52" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-55" value="52" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/lbjht9ZXvLY/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=lbjht9ZXvLY" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=Lovely%20Falcon%20I%60m%20Not%20Ok" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="track-card" data-index="56">
+            <div class="track-header">
+                <div class="track-thumbnail">
+                    <img src="https://i.ytimg.com/vi/UFynmEtoUVI/hqdefault.jpg" alt="CAHAYA [WSR Release]" loading="lazy">
+                </div>
+                <div class="track-info">
+                    <div class="track-title">CAHAYA [WSR Release]</div>
+                    <div class="track-artist">MIRZUL</div>
+                    
+                    <div class="track-data">
+                        <div class="data-item">
+                            <div class="data-label">Gênero</div>
+                            <input type="text" class="input-value" id="genre-56" value="Electronic" onchange="updateProgress()" aria-label="Gênero da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">BPM</div>
+                            <input type="number" class="input-value" id="bpm-56" value="125" onchange="updateProgress()" aria-label="BPM da música">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (formato: 2.9k, 15.3k, 1.2M)</div>
+                            <input type="text" class="input-value" id="plays-56" value="2" onchange="updateProgress()" aria-label="Views formatado">
+                        </div>
+                        <div class="data-item">
+                            <div class="data-label">Views (número)</div>
+                            <input type="number" class="input-value" id="viewsNum-56" value="2" onchange="updateProgress()" aria-label="Views numérico">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg" target="_blank" rel="noopener" class="link-btn">🖼️ Ver Thumbnail (Gênero)</a>
+                        <a href="https://www.youtube.com/watch?v=UFynmEtoUVI" target="_blank" rel="noopener" class="link-btn">▶️ Abrir YouTube (Views)</a>
+                        <a href="https://tunebat.com/Search?q=MIRZUL%20CAHAYA" target="_blank" rel="noopener" class="link-btn">🎵 Verificar BPM (Tunebat)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        </div>
+    </div>
+
+    <script>
+        function updateProgress() {
+            // Contar quantos campos foram editados
+            const totalTracks = 57;
+            let updated = 0;
+            
+            for (let i = 0; i < totalTracks; i++) {
+                const genre = document.getElementById('genre-' + i).value;
+                const originalGenre = 'Electronic';
+                
+                if (genre !== originalGenre) {
+                    updated++;
+                }
+            }
+            
+            document.getElementById('progress').textContent = updated;
+        }
+
+        function exportJSON() {
+            const tracks = [];
+            const totalTracks = 57;
+            
+            const originalTracks = [{"number":33,"title":"Sunshine [WSR Release]","artist":"Roadtownboy","genre":"Electronic","date":"2026-01-05","plays":"39.0M","viewsNum":39000000,"duration":"3:09","bpm":128,"artwork":"https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg","videoId":"wPnjckHdcc8","youtubeUrl":"https://www.youtube.com/watch?v=wPnjckHdcc8","audioFile":"music/033_Sunshine__WSR_Release_.mp3"},{"number":3,"title":"Beautiful Moon (Tibo Walker) [WSR X NCR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"29.0M","viewsNum":29000000,"duration":"4:21","bpm":126,"artwork":"https://i.ytimg.com/vi/8Rab-4lgOCM/hqdefault.jpg","videoId":"8Rab-4lgOCM","youtubeUrl":"https://www.youtube.com/watch?v=8Rab-4lgOCM","audioFile":"music/003_Beautiful_Moon__Tibo_Walker___WSR_X_NCR_.mp3"},{"number":12,"title":"Unsure (Amir Zul Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"16.0M","viewsNum":16000000,"duration":"2:48","bpm":126,"artwork":"https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg","videoId":"QlK9Sd6IbBU","youtubeUrl":"https://www.youtube.com/watch?v=QlK9Sd6IbBU","audioFile":"music/012_Unsure__Amir_Zul_Cover___WSR_Release_.mp3"},{"number":6,"title":"Half [WSR Release]","artist":"J.H.L","genre":"Electronic","date":"2026-01-05","plays":"12.0M","viewsNum":12000000,"duration":"2:04","bpm":132,"artwork":"https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg","videoId":"Zsa2O7cMq6Q","youtubeUrl":"https://www.youtube.com/watch?v=Zsa2O7cMq6Q","audioFile":"music/006_Half__WSR_Release_.mp3"},{"number":51,"title":"The Spectre (YTM Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"8.0M","viewsNum":8000000,"duration":"2:55","bpm":125,"artwork":"https://i.ytimg.com/vi/gdjUBrnwW_I/hqdefault.jpg","videoId":"gdjUBrnwW_I","youtubeUrl":"https://www.youtube.com/watch?v=gdjUBrnwW_I","audioFile":"music/051_The_Spectre__YTM_Cover___WSR_Release_.mp3"},{"number":48,"title":"FRIENDS [WSR Release]","artist":"DJ E.J","genre":"Electronic","date":"2026-01-05","plays":"1.0M","viewsNum":1000000,"duration":"3:07","bpm":79,"artwork":"https://i.ytimg.com/vi/3qpopktEh7k/hqdefault.jpg","videoId":"3qpopktEh7k","youtubeUrl":"https://www.youtube.com/watch?v=3qpopktEh7k","audioFile":"music/048_FRIENDS__WSR_Release_.mp3"},{"number":11,"title":"Fade (YTM Old Style Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"897","viewsNum":897,"duration":"2:54","bpm":135,"artwork":"https://i.ytimg.com/vi/KWycVQL5pS0/hqdefault.jpg","videoId":"KWycVQL5pS0","youtubeUrl":"https://www.youtube.com/watch?v=KWycVQL5pS0","audioFile":"music/011_Fade__YTM_Old_Style_Cover___WSR_Release_.mp3"},{"number":42,"title":"IMPERADOR PHONK MANO [WSR Release]","artist":"EMPEROR PLAYA","genre":"Electronic","date":"2026-01-05","plays":"859","viewsNum":859,"duration":"2:32","bpm":135,"artwork":"https://i.ytimg.com/vi/zUh9kV3wG0E/hqdefault.jpg","videoId":"zUh9kV3wG0E","youtubeUrl":"https://www.youtube.com/watch?v=zUh9kV3wG0E","audioFile":"music/042_IMPERADOR_PHONK_MANO__WSR_Release_.mp3"},{"number":30,"title":"Lights Above You [WSR Release]","artist":"Roadtownboy","genre":"Electronic","date":"2026-01-05","plays":"792","viewsNum":792,"duration":"4:47","bpm":124,"artwork":"https://i.ytimg.com/vi/F8r22WDoBaY/hqdefault.jpg","videoId":"F8r22WDoBaY","youtubeUrl":"https://www.youtube.com/watch?v=F8r22WDoBaY","audioFile":"music/030_Lights_Above_You__WSR_Release_.mp3"},{"number":35,"title":"Summer Time (DJ E.J Cover) [WSR X NCR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"698","viewsNum":698,"duration":"2:38","bpm":135,"artwork":"https://i.ytimg.com/vi/e6xlTEKnsXQ/hqdefault.jpg","videoId":"e6xlTEKnsXQ","youtubeUrl":"https://www.youtube.com/watch?v=e6xlTEKnsXQ","audioFile":"music/035_Summer_Time__DJ_E_J_Cover___WSR_X_NCR_Re.mp3"},{"number":44,"title":"Midnight [WSR Release]","artist":"M4R1US BP","genre":"Electronic","date":"2026-01-05","plays":"690","viewsNum":690,"duration":"3:03","bpm":128,"artwork":"https://i.ytimg.com/vi/pcyfwbZQhWE/hqdefault.jpg","videoId":"pcyfwbZQhWE","youtubeUrl":"https://www.youtube.com/watch?v=pcyfwbZQhWE","audioFile":"music/044_Midnight__WSR_Release_.mp3"},{"number":8,"title":"Dangerous Desire [WSR Release]","artist":"SUNDMAN","genre":"Electronic","date":"2026-01-05","plays":"634","viewsNum":634,"duration":"3:26","bpm":130,"artwork":"https://i.ytimg.com/vi/nNoB1PNwWgA/hqdefault.jpg","videoId":"nNoB1PNwWgA","youtubeUrl":"https://www.youtube.com/watch?v=nNoB1PNwWgA","audioFile":"music/008_Dangerous_Desire__WSR_Release_.mp3"},{"number":40,"title":"OBLIVION (Instrumental) [WSR Release]","artist":"DJ E.J","genre":"Electronic","date":"2026-01-05","plays":"622","viewsNum":622,"duration":"3:49","bpm":130,"artwork":"https://i.ytimg.com/vi/aAjYC5sLCOo/hqdefault.jpg","videoId":"aAjYC5sLCOo","youtubeUrl":"https://www.youtube.com/watch?v=aAjYC5sLCOo","audioFile":"music/040_OBLIVION__Instrumental___WSR_Release_.mp3"},{"number":32,"title":"Lua (edumps Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"597","viewsNum":597,"duration":"3:14","bpm":132,"artwork":"https://i.ytimg.com/vi/r4ltKQYovv0/hqdefault.jpg","videoId":"r4ltKQYovv0","youtubeUrl":"https://www.youtube.com/watch?v=r4ltKQYovv0","audioFile":"music/032_Lua__edumps_Cover___WSR_Release_.mp3"},{"number":36,"title":"There For You [WSR Release]","artist":"M4R1USBP X ZuL-K9","genre":"Electronic","date":"2026-01-05","plays":"542","viewsNum":542,"duration":"2:14","bpm":132,"artwork":"https://i.ytimg.com/vi/a4bMiEZbr5k/hqdefault.jpg","videoId":"a4bMiEZbr5k","youtubeUrl":"https://www.youtube.com/watch?v=a4bMiEZbr5k","audioFile":"music/036_There_For_You__WSR_Release_.mp3"},{"number":22,"title":"Sapruca [WSR Release]","artist":"el yobis yt","genre":"Electronic","date":"2026-01-05","plays":"512","viewsNum":512,"duration":"2:48","bpm":135,"artwork":"https://i.ytimg.com/vi/sgzljoYpitA/hqdefault.jpg","videoId":"sgzljoYpitA","youtubeUrl":"https://www.youtube.com/watch?v=sgzljoYpitA","audioFile":"music/022_Sapruca__WSR_Release_.mp3"},{"number":31,"title":"Unity (M4R1US BP Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"506","viewsNum":506,"duration":"3:26","bpm":125,"artwork":"https://i.ytimg.com/vi/LHA2HgYtUdc/hqdefault.jpg","videoId":"LHA2HgYtUdc","youtubeUrl":"https://www.youtube.com/watch?v=LHA2HgYtUdc","audioFile":"music/031_Unity__M4R1US_BP_Cover___WSR_Release_.mp3"},{"number":25,"title":"Spirits Vip (feat.M4R1US BP) [WSR RELEASE]","artist":"edumps","genre":"Electronic","date":"2026-01-05","plays":"503","viewsNum":503,"duration":"2:27","bpm":128,"artwork":"https://i.ytimg.com/vi/fBmLJHpSIQU/hqdefault.jpg","videoId":"fBmLJHpSIQU","youtubeUrl":"https://www.youtube.com/watch?v=fBmLJHpSIQU","audioFile":"music/025_Spirits_Vip__feat_M4R1US_BP___WSR_RELEAS.mp3"},{"number":10,"title":"Another Night (edumps Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"494","viewsNum":494,"duration":"2:50","bpm":125,"artwork":"https://i.ytimg.com/vi/OUWRAN7jRXc/hqdefault.jpg","videoId":"OUWRAN7jRXc","youtubeUrl":"https://www.youtube.com/watch?v=OUWRAN7jRXc","audioFile":"music/010_Another_Night__edumps_Cover___WSR_Releas.mp3"},{"number":43,"title":"Summer Love [WSR Release]","artist":"edumps","genre":"Electronic","date":"2026-01-05","plays":"476","viewsNum":476,"duration":"2:29","bpm":125,"artwork":"https://i.ytimg.com/vi/myT2FpPye9I/hqdefault.jpg","videoId":"myT2FpPye9I","youtubeUrl":"https://www.youtube.com/watch?v=myT2FpPye9I","audioFile":"music/043_Summer_Love__WSR_Release_.mp3"},{"number":16,"title":"Are You With Me? (CIFU Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"470","viewsNum":470,"duration":"4:13","bpm":126,"artwork":"https://i.ytimg.com/vi/_iSJcDekxyc/hqdefault.jpg","videoId":"_iSJcDekxyc","youtubeUrl":"https://www.youtube.com/watch?v=_iSJcDekxyc","audioFile":"music/016_Are_You_With_Me___CIFU_Cover___WSR_Relea.mp3"},{"number":29,"title":"Lost (DJ E.J Cover)[WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"436","viewsNum":436,"duration":"3:10","bpm":135,"artwork":"https://i.ytimg.com/vi/IcDfqcGsQG8/hqdefault.jpg","videoId":"IcDfqcGsQG8","youtubeUrl":"https://www.youtube.com/watch?v=IcDfqcGsQG8","audioFile":"music/029_Lost__DJ_E_J_Cover__WSR_Release_.mp3"},{"number":34,"title":"Lift [WSR Release]","artist":"Roadtownboy","genre":"Electronic","date":"2026-01-05","plays":"393","viewsNum":393,"duration":"4:25","bpm":132,"artwork":"https://i.ytimg.com/vi/a1PXwuei1OM/hqdefault.jpg","videoId":"a1PXwuei1OM","youtubeUrl":"https://www.youtube.com/watch?v=a1PXwuei1OM","audioFile":"music/034_Lift__WSR_Release_.mp3"},{"number":2,"title":"Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]","artist":"YTM x edumps","genre":"Electronic","date":"2026-01-05","plays":"391","viewsNum":391,"duration":"2:33","bpm":135,"artwork":"https://i.ytimg.com/vi/kEFhQEQm2ZM/hqdefault.jpg","videoId":"kEFhQEQm2ZM","youtubeUrl":"https://www.youtube.com/watch?v=kEFhQEQm2ZM","audioFile":"music/002_Never_Be_The_Same__Don_t_Forget_Me__Pt__.mp3"},{"number":23,"title":"Greedy (edumps Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"391","viewsNum":391,"duration":"2:18","bpm":125,"artwork":"https://i.ytimg.com/vi/Q7ljk06hgVA/hqdefault.jpg","videoId":"Q7ljk06hgVA","youtubeUrl":"https://www.youtube.com/watch?v=Q7ljk06hgVA","audioFile":"music/023_Greedy__edumps_Cover___WSR_Release_.mp3"},{"number":5,"title":"Fearless [WSR Release]","artist":"J.H.L","genre":"Electronic","date":"2026-01-05","plays":"377","viewsNum":377,"duration":"2:07","bpm":135,"artwork":"https://i.ytimg.com/vi/-nCqg5BsGQY/hqdefault.jpg","videoId":"-nCqg5BsGQY","youtubeUrl":"https://www.youtube.com/watch?v=-nCqg5BsGQY","audioFile":"music/005_Fearless__WSR_Release_.mp3"},{"number":38,"title":"Thunderstorm [WSR Release]","artist":"Roadtownboy","genre":"Electronic","date":"2026-01-05","plays":"369","viewsNum":369,"duration":"3:22","bpm":132,"artwork":"https://i.ytimg.com/vi/RFP4nGikv0I/hqdefault.jpg","videoId":"RFP4nGikv0I","youtubeUrl":"https://www.youtube.com/watch?v=RFP4nGikv0I","audioFile":"music/038_Thunderstorm__WSR_Release_.mp3"},{"number":19,"title":"Death Rave [WSR Release]","artist":"M4R1US BP","genre":"Electronic","date":"2026-01-05","plays":"362","viewsNum":362,"duration":"3:04","bpm":125,"artwork":"https://i.ytimg.com/vi/qdHO5R2w6Q0/hqdefault.jpg","videoId":"qdHO5R2w6Q0","youtubeUrl":"https://www.youtube.com/watch?v=qdHO5R2w6Q0","audioFile":"music/019_Death_Rave__WSR_Release_.mp3"},{"number":57,"title":"Fade (YTM Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"359","viewsNum":359,"duration":"2:48","bpm":125,"artwork":"https://i.ytimg.com/vi/Gqy_MFUxRn0/hqdefault.jpg","videoId":"Gqy_MFUxRn0","youtubeUrl":"https://www.youtube.com/watch?v=Gqy_MFUxRn0","audioFile":"music/057_Fade__YTM_Cover___WSR_Release_.mp3"},{"number":24,"title":"Trinity [WSR Release]","artist":"The Space Arcade","genre":"Electronic","date":"2026-01-05","plays":"345","viewsNum":345,"duration":"6:04","bpm":130,"artwork":"https://i.ytimg.com/vi/Du4_wl5tFm0/hqdefault.jpg","videoId":"Du4_wl5tFm0","youtubeUrl":"https://www.youtube.com/watch?v=Du4_wl5tFm0","audioFile":"music/024_Trinity__WSR_Release_.mp3"},{"number":55,"title":"I Really Like You (M4R1US BP Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"326","viewsNum":326,"duration":"3:11","bpm":130,"artwork":"https://i.ytimg.com/vi/J1rVcgVAVC0/hqdefault.jpg","videoId":"J1rVcgVAVC0","youtubeUrl":"https://www.youtube.com/watch?v=J1rVcgVAVC0","audioFile":"music/055_I_Really_Like_You__M4R1US_BP_Cover___WSR.mp3"},{"number":47,"title":"Dreamy [WSR Release]","artist":"EMPEROR PLAYA","genre":"Electronic","date":"2026-01-05","plays":"303","viewsNum":303,"duration":"1:54","bpm":135,"artwork":"https://i.ytimg.com/vi/d6n0F8m1glE/hqdefault.jpg","videoId":"d6n0F8m1glE","youtubeUrl":"https://www.youtube.com/watch?v=d6n0F8m1glE","audioFile":"music/047_Dreamy__WSR_Release_.mp3"},{"number":52,"title":"Emotions Master [WSR Release]","artist":"M4R1US BP","genre":"Electronic","date":"2026-01-05","plays":"292","viewsNum":292,"duration":"2:36","bpm":126,"artwork":"https://i.ytimg.com/vi/--bwQZ8XAAI/hqdefault.jpg","videoId":"--bwQZ8XAAI","youtubeUrl":"https://www.youtube.com/watch?v=--bwQZ8XAAI","audioFile":"music/052_Emotions_Master__WSR_Release_.mp3"},{"number":41,"title":"BRAZILIAN DESCE E ATIRA [WSR Release]","artist":"EMPEROR PLAYA","genre":"Electronic","date":"2026-01-05","plays":"258","viewsNum":258,"duration":"1:12","bpm":126,"artwork":"https://i.ytimg.com/vi/pTkkS7UI-rM/hqdefault.jpg","videoId":"pTkkS7UI-rM","youtubeUrl":"https://www.youtube.com/watch?v=pTkkS7UI-rM","audioFile":"music/041_BRAZILIAN_DESCE_E_ATIRA__WSR_Release_.mp3"},{"number":7,"title":"The Space Arcade -OceanWave [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"229","viewsNum":229,"duration":"4:01","bpm":125,"artwork":"https://i.ytimg.com/vi/CfI55SE-MJo/hqdefault.jpg","videoId":"CfI55SE-MJo","youtubeUrl":"https://www.youtube.com/watch?v=CfI55SE-MJo","audioFile":"music/007_The_Space_Arcade__OceanWave__WSR_Release.mp3"},{"number":45,"title":"Water Things [WSR Release]","artist":"YTM","genre":"Electronic","date":"2026-01-05","plays":"211","viewsNum":211,"duration":"3:00","bpm":126,"artwork":"https://i.ytimg.com/vi/2gA6c7ilkKE/hqdefault.jpg","videoId":"2gA6c7ilkKE","youtubeUrl":"https://www.youtube.com/watch?v=2gA6c7ilkKE","audioFile":"music/045_Water_Things__WSR_Release_.mp3"},{"number":26,"title":"Uh Na Na Na (edumps Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"210","viewsNum":210,"duration":"2:54","bpm":124,"artwork":"https://i.ytimg.com/vi/2ofe9EF96SA/hqdefault.jpg","videoId":"2ofe9EF96SA","youtubeUrl":"https://www.youtube.com/watch?v=2ofe9EF96SA","audioFile":"music/026_Uh_Na_Na_Na__edumps_Cover___WSR_Release_.mp3"},{"number":54,"title":"Fade VIP [WSR Release]","artist":"YTM","genre":"Electronic","date":"2026-01-05","plays":"209","viewsNum":209,"duration":"3:12","bpm":132,"artwork":"https://i.ytimg.com/vi/3TgDcFX0KeA/hqdefault.jpg","videoId":"3TgDcFX0KeA","youtubeUrl":"https://www.youtube.com/watch?v=3TgDcFX0KeA","audioFile":"music/054_Fade_VIP__WSR_Release_.mp3"},{"number":15,"title":"What Was I Made For (Awaken Soul Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"202","viewsNum":202,"duration":"3:38","bpm":132,"artwork":"https://i.ytimg.com/vi/wdieag2o1sg/hqdefault.jpg","videoId":"wdieag2o1sg","youtubeUrl":"https://www.youtube.com/watch?v=wdieag2o1sg","audioFile":"music/015_What_Was_I_Made_For__Awaken_Soul_Cover__.mp3"},{"number":50,"title":"SPEACK [WSR Release]","artist":"DJ E.J","genre":"Electronic","date":"2026-01-05","plays":"194","viewsNum":194,"duration":"3:25","bpm":126,"artwork":"https://i.ytimg.com/vi/Q2iH77ldFEs/hqdefault.jpg","videoId":"Q2iH77ldFEs","youtubeUrl":"https://www.youtube.com/watch?v=Q2iH77ldFEs","audioFile":"music/050_SPEACK__WSR_Release_.mp3"},{"number":13,"title":"CIFU & AVVI- Another Night feat. Betsy Erickson [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"192","viewsNum":192,"duration":"3:59","bpm":128,"artwork":"https://i.ytimg.com/vi/49Kuz3rIlSY/hqdefault.jpg","videoId":"49Kuz3rIlSY","youtubeUrl":"https://www.youtube.com/watch?v=49Kuz3rIlSY","audioFile":"music/013_CIFU___AVVI__Another_Night_feat__Betsy_E.mp3"},{"number":4,"title":"i miss you [WSR Release]","artist":"YTM","genre":"Electronic","date":"2026-01-05","plays":"187","viewsNum":187,"duration":"2:51","bpm":135,"artwork":"https://i.ytimg.com/vi/bn779nghq2Q/hqdefault.jpg","videoId":"bn779nghq2Q","youtubeUrl":"https://www.youtube.com/watch?v=bn779nghq2Q","audioFile":"music/004_i_miss_you__WSR_Release_.mp3"},{"number":56,"title":"Static World [WSR Release]","artist":"Prozvan x edumps","genre":"Electronic","date":"2026-01-05","plays":"181","viewsNum":181,"duration":"2:54","bpm":132,"artwork":"https://i.ytimg.com/vi/CgMjGgnwIBg/hqdefault.jpg","videoId":"CgMjGgnwIBg","youtubeUrl":"https://www.youtube.com/watch?v=CgMjGgnwIBg","audioFile":"music/056_Static_World__WSR_Release_.mp3"},{"number":21,"title":"She's The Only One For Me  [WSR Release]","artist":"Paul Archer","genre":"Electronic","date":"2026-01-05","plays":"155","viewsNum":155,"duration":"3:00","bpm":130,"artwork":"https://i.ytimg.com/vi/vLm4YJJH778/hqdefault.jpg","videoId":"vLm4YJJH778","youtubeUrl":"https://www.youtube.com/watch?v=vLm4YJJH778","audioFile":"music/021_She_s_The_Only_One_For_Me___WSR_Release_.mp3"},{"number":28,"title":"Summer Time (Praveen Stakez Cover) [WSR x NCR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"151","viewsNum":151,"duration":"2:27","bpm":130,"artwork":"https://i.ytimg.com/vi/VsYGYIg9ihE/hqdefault.jpg","videoId":"VsYGYIg9ihE","youtubeUrl":"https://www.youtube.com/watch?v=VsYGYIg9ihE","audioFile":"music/028_Summer_Time__Praveen_Stakez_Cover___WSR_.mp3"},{"number":27,"title":"UH NA NA NA [WSR Release]","artist":"LionJhon","genre":"Electronic","date":"2026-01-05","plays":"146","viewsNum":146,"duration":"2:49","bpm":130,"artwork":"https://i.ytimg.com/vi/_cA3P2xMWuA/hqdefault.jpg","videoId":"_cA3P2xMWuA","youtubeUrl":"https://www.youtube.com/watch?v=_cA3P2xMWuA","audioFile":"music/027_UH_NA_NA_NA__WSR_Release_.mp3"},{"number":37,"title":"Summer Time (edumps & Mary Cover) [WSR x NCR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"140","viewsNum":140,"duration":"2:23","bpm":124,"artwork":"https://i.ytimg.com/vi/ZJRAw3EdCvo/hqdefault.jpg","videoId":"ZJRAw3EdCvo","youtubeUrl":"https://www.youtube.com/watch?v=ZJRAw3EdCvo","audioFile":"music/037_Summer_Time__edumps___Mary_Cover___WSR_x.mp3"},{"number":14,"title":"Orbital [WSR Release]","artist":"Lindsay Lund","genre":"Electronic","date":"2026-01-05","plays":"127","viewsNum":127,"duration":"4:06","bpm":132,"artwork":"https://i.ytimg.com/vi/gu_iSXXKavk/hqdefault.jpg","videoId":"gu_iSXXKavk","youtubeUrl":"https://www.youtube.com/watch?v=gu_iSXXKavk","audioFile":"music/014_Orbital__WSR_Release_.mp3"},{"number":49,"title":"DEADLINE [WSR Release]","artist":"EMPEROR PLAYA","genre":"Electronic","date":"2026-01-05","plays":"123","viewsNum":123,"duration":"2:04","bpm":130,"artwork":"https://i.ytimg.com/vi/O4zBAJzQsGo/hqdefault.jpg","videoId":"O4zBAJzQsGo","youtubeUrl":"https://www.youtube.com/watch?v=O4zBAJzQsGo","audioFile":"music/049_DEADLINE__WSR_Release_.mp3"},{"number":53,"title":"I Need Your Love (edumps Cover) [WSR Release]","artist":"World Studio Records","genre":"Electronic","date":"2026-01-05","plays":"122","viewsNum":122,"duration":"3:23","bpm":126,"artwork":"https://i.ytimg.com/vi/4GI-DAruMNg/hqdefault.jpg","videoId":"4GI-DAruMNg","youtubeUrl":"https://www.youtube.com/watch?v=4GI-DAruMNg","audioFile":"music/053_I_Need_Your_Love__edumps_Cover___WSR_Rel.mp3"},{"number":18,"title":"Danger! [WSR Release]","artist":"TANN3R","genre":"Electronic","date":"2026-01-05","plays":"90","viewsNum":90,"duration":"3:56","bpm":132,"artwork":"https://i.ytimg.com/vi/_0RyUjQn7oU/hqdefault.jpg","videoId":"_0RyUjQn7oU","youtubeUrl":"https://www.youtube.com/watch?v=_0RyUjQn7oU","audioFile":"music/018_Danger___WSR_Release_.mp3"},{"number":17,"title":"Fou [WSR Release]","artist":"M.T","genre":"Electronic","date":"2026-01-05","plays":"83","viewsNum":83,"duration":"3:24","bpm":135,"artwork":"https://i.ytimg.com/vi/oqLeeNKXz5Y/hqdefault.jpg","videoId":"oqLeeNKXz5Y","youtubeUrl":"https://www.youtube.com/watch?v=oqLeeNKXz5Y","audioFile":"music/017_Fou__WSR_Release_.mp3"},{"number":39,"title":"Summer Time [WSR X NCR Release]","artist":"YTM","genre":"Electronic","date":"2026-01-05","plays":"78","viewsNum":78,"duration":"3:27","bpm":130,"artwork":"https://i.ytimg.com/vi/8nse_-4mRUU/hqdefault.jpg","videoId":"8nse_-4mRUU","youtubeUrl":"https://www.youtube.com/watch?v=8nse_-4mRUU","audioFile":"music/039_Summer_Time__WSR_X_NCR_Release_.mp3"},{"number":46,"title":"Piece Of Your Heart Cover [WSR Battle]","artist":"edumps Vs M4R1US BP","genre":"Electronic","date":"2026-01-05","plays":"75","viewsNum":75,"duration":"6:40","bpm":132,"artwork":"https://i.ytimg.com/vi/nQh-YV4nUeU/hqdefault.jpg","videoId":"nQh-YV4nUeU","youtubeUrl":"https://www.youtube.com/watch?v=nQh-YV4nUeU","audioFile":"music/046_Piece_Of_Your_Heart_Cover__WSR_Battle_.mp3"},{"number":20,"title":"Fire [WSR Release]","artist":"HankX ft. Iva Rii","genre":"Electronic","date":"2026-01-05","plays":"60","viewsNum":60,"duration":"3:08","bpm":128,"artwork":"https://i.ytimg.com/vi/qDC7bO25kEQ/hqdefault.jpg","videoId":"qDC7bO25kEQ","youtubeUrl":"https://www.youtube.com/watch?v=qDC7bO25kEQ","audioFile":"music/020_Fire__WSR_Release_.mp3"},{"number":9,"title":"I`m Not Ok [WSR Release]","artist":"Lovely Falcon","genre":"Electronic","date":"2026-01-05","plays":"52","viewsNum":52,"duration":"2:12","bpm":62,"artwork":"https://i.ytimg.com/vi/lbjht9ZXvLY/hqdefault.jpg","videoId":"lbjht9ZXvLY","youtubeUrl":"https://www.youtube.com/watch?v=lbjht9ZXvLY","audioFile":"music/009_I_m_Not_Ok__WSR_Release_.mp3"},{"number":1,"title":"CAHAYA [WSR Release]","artist":"MIRZUL","genre":"Electronic","date":"2026-01-05","plays":"2","viewsNum":2,"duration":"Brevemente","bpm":125,"artwork":"https://i.ytimg.com/vi/UFynmEtoUVI/hqdefault.jpg","videoId":"UFynmEtoUVI","youtubeUrl":"https://www.youtube.com/watch?v=UFynmEtoUVI","audioFile":"music/001_CAHAYA__WSR_Release_.mp3"}];
+            
+            for (let i = 0; i < totalTracks; i++) {
+                const track = {...originalTracks[i]};
+                track.genre = document.getElementById('genre-' + i).value;
+                track.bpm = parseInt(document.getElementById('bpm-' + i).value);
+                track.plays = document.getElementById('plays-' + i).value;
+                track.viewsNum = parseInt(document.getElementById('viewsNum-' + i).value);
+                tracks.push(track);
+            }
+            
+            const jsonData = {tracks: tracks};
+            const jsonString = JSON.stringify(jsonData, null, 2);
+            
+            // Criar download
+            const blob = new Blob([jsonString], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'youtube_data_updated.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            alert('✅ JSON exportado! Substitua o arquivo youtube_data.json pelo arquivo baixado.');
+        }
+    </script>
+</body>
+</html>

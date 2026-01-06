@@ -1,0 +1,709 @@
+{
+  "topReleases": [
+    {
+      "number": 33,
+      "title": "Sunshine [WSR Release]",
+      "artist": "Roadtownboy",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "39.0M",
+      "viewsNum": 39000000,
+      "duration": "3:09",
+      "bpm": 128,
+      "artwork": "https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg",
+      "videoId": "wPnjckHdcc8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=wPnjckHdcc8",
+      "audioFile": "music/033_Sunshine__WSR_Release_.mp3"
+    },
+    {
+      "number": 3,
+      "title": "Beautiful Moon (Tibo Walker) [WSR X NCR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "29.0M",
+      "viewsNum": 29000000,
+      "duration": "4:21",
+      "bpm": 126,
+      "artwork": "https://i.ytimg.com/vi/8Rab-4lgOCM/hqdefault.jpg",
+      "videoId": "8Rab-4lgOCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8Rab-4lgOCM",
+      "audioFile": "music/003_Beautiful_Moon__Tibo_Walker___WSR_X_NCR_.mp3"
+    },
+    {
+      "number": 12,
+      "title": "Unsure (Amir Zul Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "16.0M",
+      "viewsNum": 16000000,
+      "duration": "2:48",
+      "bpm": 126,
+      "artwork": "https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg",
+      "videoId": "QlK9Sd6IbBU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QlK9Sd6IbBU",
+      "audioFile": "music/012_Unsure__Amir_Zul_Cover___WSR_Release_.mp3"
+    },
+    {
+      "number": 6,
+      "title": "Half [WSR Release]",
+      "artist": "J.H.L",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "12.0M",
+      "viewsNum": 12000000,
+      "duration": "2:04",
+      "bpm": 132,
+      "artwork": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg",
+      "videoId": "Zsa2O7cMq6Q",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Zsa2O7cMq6Q",
+      "audioFile": "music/006_Half__WSR_Release_.mp3"
+    },
+    {
+      "number": 51,
+      "title": "The Spectre (YTM Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "8.0M",
+      "viewsNum": 8000000,
+      "duration": "2:55",
+      "bpm": 125,
+      "artwork": "https://i.ytimg.com/vi/gdjUBrnwW_I/hqdefault.jpg",
+      "videoId": "gdjUBrnwW_I",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gdjUBrnwW_I",
+      "audioFile": "music/051_The_Spectre__YTM_Cover___WSR_Release_.mp3"
+    },
+    {
+      "number": 48,
+      "title": "FRIENDS [WSR Release]",
+      "artist": "DJ E.J",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "1.0M",
+      "viewsNum": 1000000,
+      "duration": "3:07",
+      "bpm": 126,
+      "artwork": "https://i.ytimg.com/vi/3qpopktEh7k/hqdefault.jpg",
+      "videoId": "3qpopktEh7k",
+      "youtubeUrl": "https://www.youtube.com/watch?v=3qpopktEh7k",
+      "audioFile": "music/048_FRIENDS__WSR_Release_.mp3"
+    },
+    {
+      "number": 11,
+      "title": "Fade (YTM Old Style Cover) [WSR Release]",
+      "artist": "World Studio Records",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "897",
+      "viewsNum": 897,
+      "duration": "2:54",
+      "bpm": 135,
+      "artwork": "https://i.ytimg.com/vi/KWycVQL5pS0/hqdefault.jpg",
+      "videoId": "KWycVQL5pS0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=KWycVQL5pS0",
+      "audioFile": "music/011_Fade__YTM_Old_Style_Cover___WSR_Release_.mp3"
+    },
+    {
+      "number": 42,
+      "title": "IMPERADOR PHONK MANO [WSR Release]",
+      "artist": "EMPEROR PLAYA",
+      "genre": "Electronic",
+      "date": "2026-01-05",
+      "plays": "859",
+      "viewsNum": 859,
+      "duration": "2:32",
+      "bpm": 135,
+      "artwork": "https://i.ytimg.com/vi/zUh9kV3wG0E/hqdefault.jpg",
+      "videoId": "zUh9kV3wG0E",
+      "youtubeUrl": "https://www.youtube.com/watch?v=zUh9kV3wG0E",
+      "audioFile": "music/042_IMPERADOR_PHONK_MANO__WSR_Release_.mp3"
+    }
+  ],
+  "topArtists": [
+    {
+      "name": "Roadtownboy",
+      "totalViews": 39001554,
+      "tracks": [
+        {
+          "title": "Sunshine [WSR Release]",
+          "views": 39000000,
+          "videoId": "wPnjckHdcc8"
+        },
+        {
+          "title": "Lights Above You [WSR Release]",
+          "views": 792,
+          "videoId": "F8r22WDoBaY"
+        },
+        {
+          "title": "Lift [WSR Release]",
+          "views": 393,
+          "videoId": "a1PXwuei1OM"
+        },
+        {
+          "title": "Thunderstorm [WSR Release]",
+          "views": 369,
+          "videoId": "RFP4nGikv0I"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg"
+    },
+    {
+      "name": "Amir Zul",
+      "totalViews": 16000000,
+      "tracks": [
+        {
+          "title": "Unsure (Amir Zul Cover) [WSR Release]",
+          "views": 16000000,
+          "videoId": "QlK9Sd6IbBU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg"
+    },
+    {
+      "name": "J.H.L",
+      "totalViews": 12000377,
+      "tracks": [
+        {
+          "title": "Half [WSR Release]",
+          "views": 12000000,
+          "videoId": "Zsa2O7cMq6Q"
+        },
+        {
+          "title": "Fearless [WSR Release]",
+          "views": 377,
+          "videoId": "-nCqg5BsGQY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg"
+    }
+  ],
+  "allArtists": [
+    {
+      "name": "Roadtownboy",
+      "totalViews": 39001554,
+      "tracks": [
+        {
+          "title": "Sunshine [WSR Release]",
+          "views": 39000000,
+          "videoId": "wPnjckHdcc8"
+        },
+        {
+          "title": "Lights Above You [WSR Release]",
+          "views": 792,
+          "videoId": "F8r22WDoBaY"
+        },
+        {
+          "title": "Lift [WSR Release]",
+          "views": 393,
+          "videoId": "a1PXwuei1OM"
+        },
+        {
+          "title": "Thunderstorm [WSR Release]",
+          "views": 369,
+          "videoId": "RFP4nGikv0I"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/wPnjckHdcc8/hqdefault.jpg"
+    },
+    {
+      "name": "Amir Zul",
+      "totalViews": 16000000,
+      "tracks": [
+        {
+          "title": "Unsure (Amir Zul Cover) [WSR Release]",
+          "views": 16000000,
+          "videoId": "QlK9Sd6IbBU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/QlK9Sd6IbBU/hqdefault.jpg"
+    },
+    {
+      "name": "J.H.L",
+      "totalViews": 12000377,
+      "tracks": [
+        {
+          "title": "Half [WSR Release]",
+          "views": 12000000,
+          "videoId": "Zsa2O7cMq6Q"
+        },
+        {
+          "title": "Fearless [WSR Release]",
+          "views": 377,
+          "videoId": "-nCqg5BsGQY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg"
+    },
+    {
+      "name": "YTM",
+      "totalViews": 8001435,
+      "tracks": [
+        {
+          "title": "The Spectre (YTM Cover) [WSR Release]",
+          "views": 8000000,
+          "videoId": "gdjUBrnwW_I"
+        },
+        {
+          "title": "Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]",
+          "views": 391,
+          "videoId": "kEFhQEQm2ZM"
+        },
+        {
+          "title": "Fade (YTM Cover) [WSR Release]",
+          "views": 359,
+          "videoId": "Gqy_MFUxRn0"
+        },
+        {
+          "title": "Water Things [WSR Release]",
+          "views": 211,
+          "videoId": "2gA6c7ilkKE"
+        },
+        {
+          "title": "Fade VIP [WSR Release]",
+          "views": 209,
+          "videoId": "3TgDcFX0KeA"
+        },
+        {
+          "title": "i miss you [WSR Release]",
+          "views": 187,
+          "videoId": "bn779nghq2Q"
+        },
+        {
+          "title": "Summer Time [WSR X NCR Release]",
+          "views": 78,
+          "videoId": "8nse_-4mRUU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/gdjUBrnwW_I/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/gdjUBrnwW_I/hqdefault.jpg"
+    },
+    {
+      "name": "DJ E.J",
+      "totalViews": 1001950,
+      "tracks": [
+        {
+          "title": "FRIENDS [WSR Release]",
+          "views": 1000000,
+          "videoId": "3qpopktEh7k"
+        },
+        {
+          "title": "Summer Time (DJ E.J Cover) [WSR X NCR Release]",
+          "views": 698,
+          "videoId": "e6xlTEKnsXQ"
+        },
+        {
+          "title": "OBLIVION (Instrumental) [WSR Release]",
+          "views": 622,
+          "videoId": "aAjYC5sLCOo"
+        },
+        {
+          "title": "Lost (DJ E.J Cover)[WSR Release]",
+          "views": 436,
+          "videoId": "IcDfqcGsQG8"
+        },
+        {
+          "title": "SPEACK [WSR Release]",
+          "views": 194,
+          "videoId": "Q2iH77ldFEs"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/3qpopktEh7k/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/3qpopktEh7k/hqdefault.jpg"
+    },
+    {
+      "name": "edumps",
+      "totalViews": 3365,
+      "tracks": [
+        {
+          "title": "Lua (edumps Cover) [WSR Release]",
+          "views": 597,
+          "videoId": "r4ltKQYovv0"
+        },
+        {
+          "title": "Spirits Vip (feat.M4R1US BP) [WSR RELEASE]",
+          "views": 503,
+          "videoId": "fBmLJHpSIQU"
+        },
+        {
+          "title": "Another Night (edumps Cover) [WSR Release]",
+          "views": 494,
+          "videoId": "OUWRAN7jRXc"
+        },
+        {
+          "title": "Summer Love [WSR Release]",
+          "views": 476,
+          "videoId": "myT2FpPye9I"
+        },
+        {
+          "title": "Never Be The Same (Don't Forget Me, Pt. III) [WSR x NCR Release]",
+          "views": 391,
+          "videoId": "kEFhQEQm2ZM"
+        },
+        {
+          "title": "Greedy (edumps Cover) [WSR Release]",
+          "views": 391,
+          "videoId": "Q7ljk06hgVA"
+        },
+        {
+          "title": "Uh Na Na Na (edumps Cover) [WSR Release]",
+          "views": 210,
+          "videoId": "2ofe9EF96SA"
+        },
+        {
+          "title": "Static World [WSR Release]",
+          "views": 181,
+          "videoId": "CgMjGgnwIBg"
+        },
+        {
+          "title": "I Need Your Love (edumps Cover) [WSR Release]",
+          "views": 122,
+          "videoId": "4GI-DAruMNg"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/r4ltKQYovv0/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/r4ltKQYovv0/hqdefault.jpg"
+    },
+    {
+      "name": "M4R1US BP",
+      "totalViews": 2176,
+      "tracks": [
+        {
+          "title": "Midnight [WSR Release]",
+          "views": 690,
+          "videoId": "pcyfwbZQhWE"
+        },
+        {
+          "title": "Unity (M4R1US BP Cover) [WSR Release]",
+          "views": 506,
+          "videoId": "LHA2HgYtUdc"
+        },
+        {
+          "title": "Death Rave [WSR Release]",
+          "views": 362,
+          "videoId": "qdHO5R2w6Q0"
+        },
+        {
+          "title": "I Really Like You (M4R1US BP Cover) [WSR Release]",
+          "views": 326,
+          "videoId": "J1rVcgVAVC0"
+        },
+        {
+          "title": "Emotions Master [WSR Release]",
+          "views": 292,
+          "videoId": "--bwQZ8XAAI"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/pcyfwbZQhWE/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/pcyfwbZQhWE/hqdefault.jpg"
+    },
+    {
+      "name": "EMPEROR PLAYA",
+      "totalViews": 1543,
+      "tracks": [
+        {
+          "title": "IMPERADOR PHONK MANO [WSR Release]",
+          "views": 859,
+          "videoId": "zUh9kV3wG0E"
+        },
+        {
+          "title": "Dreamy [WSR Release]",
+          "views": 303,
+          "videoId": "d6n0F8m1glE"
+        },
+        {
+          "title": "BRAZILIAN DESCE E ATIRA [WSR Release]",
+          "views": 258,
+          "videoId": "pTkkS7UI-rM"
+        },
+        {
+          "title": "DEADLINE [WSR Release]",
+          "views": 123,
+          "videoId": "O4zBAJzQsGo"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/zUh9kV3wG0E/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/zUh9kV3wG0E/hqdefault.jpg"
+    },
+    {
+      "name": "YTM Old Style",
+      "totalViews": 897,
+      "tracks": [
+        {
+          "title": "Fade (YTM Old Style Cover) [WSR Release]",
+          "views": 897,
+          "videoId": "KWycVQL5pS0"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/KWycVQL5pS0/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/KWycVQL5pS0/hqdefault.jpg"
+    },
+    {
+      "name": "SUNDMAN",
+      "totalViews": 634,
+      "tracks": [
+        {
+          "title": "Dangerous Desire [WSR Release]",
+          "views": 634,
+          "videoId": "nNoB1PNwWgA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/nNoB1PNwWgA/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/nNoB1PNwWgA/hqdefault.jpg"
+    },
+    {
+      "name": "M4R1USBP",
+      "totalViews": 542,
+      "tracks": [
+        {
+          "title": "There For You [WSR Release]",
+          "views": 542,
+          "videoId": "a4bMiEZbr5k"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/a4bMiEZbr5k/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/a4bMiEZbr5k/hqdefault.jpg"
+    },
+    {
+      "name": "ZuL-K9",
+      "totalViews": 542,
+      "tracks": [
+        {
+          "title": "There For You [WSR Release]",
+          "views": 542,
+          "videoId": "a4bMiEZbr5k"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/a4bMiEZbr5k/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/a4bMiEZbr5k/hqdefault.jpg"
+    },
+    {
+      "name": "el yobis yt",
+      "totalViews": 512,
+      "tracks": [
+        {
+          "title": "Sapruca [WSR Release]",
+          "views": 512,
+          "videoId": "sgzljoYpitA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/sgzljoYpitA/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/sgzljoYpitA/hqdefault.jpg"
+    },
+    {
+      "name": "CIFU",
+      "totalViews": 470,
+      "tracks": [
+        {
+          "title": "Are You With Me? (CIFU Cover) [WSR Release]",
+          "views": 470,
+          "videoId": "_iSJcDekxyc"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/_iSJcDekxyc/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_iSJcDekxyc/hqdefault.jpg"
+    },
+    {
+      "name": "The Space Arcade",
+      "totalViews": 345,
+      "tracks": [
+        {
+          "title": "Trinity [WSR Release]",
+          "views": 345,
+          "videoId": "Du4_wl5tFm0"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/Du4_wl5tFm0/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/Du4_wl5tFm0/hqdefault.jpg"
+    },
+    {
+      "name": "Awaken Soul",
+      "totalViews": 202,
+      "tracks": [
+        {
+          "title": "What Was I Made For (Awaken Soul Cover) [WSR Release]",
+          "views": 202,
+          "videoId": "wdieag2o1sg"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/wdieag2o1sg/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/wdieag2o1sg/hqdefault.jpg"
+    },
+    {
+      "name": "Prozvan",
+      "totalViews": 181,
+      "tracks": [
+        {
+          "title": "Static World [WSR Release]",
+          "views": 181,
+          "videoId": "CgMjGgnwIBg"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/CgMjGgnwIBg/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/CgMjGgnwIBg/hqdefault.jpg"
+    },
+    {
+      "name": "Paul Archer",
+      "totalViews": 155,
+      "tracks": [
+        {
+          "title": "She's The Only One For Me  [WSR Release]",
+          "views": 155,
+          "videoId": "vLm4YJJH778"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/vLm4YJJH778/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/vLm4YJJH778/hqdefault.jpg"
+    },
+    {
+      "name": "Praveen Stakez",
+      "totalViews": 151,
+      "tracks": [
+        {
+          "title": "Summer Time (Praveen Stakez Cover) [WSR x NCR Release]",
+          "views": 151,
+          "videoId": "VsYGYIg9ihE"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/VsYGYIg9ihE/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/VsYGYIg9ihE/hqdefault.jpg"
+    },
+    {
+      "name": "LionJhon",
+      "totalViews": 146,
+      "tracks": [
+        {
+          "title": "UH NA NA NA [WSR Release]",
+          "views": 146,
+          "videoId": "_cA3P2xMWuA"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/_cA3P2xMWuA/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_cA3P2xMWuA/hqdefault.jpg"
+    },
+    {
+      "name": "edumps & Mary",
+      "totalViews": 140,
+      "tracks": [
+        {
+          "title": "Summer Time (edumps & Mary Cover) [WSR x NCR Release]",
+          "views": 140,
+          "videoId": "ZJRAw3EdCvo"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/ZJRAw3EdCvo/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/ZJRAw3EdCvo/hqdefault.jpg"
+    },
+    {
+      "name": "Lindsay Lund",
+      "totalViews": 127,
+      "tracks": [
+        {
+          "title": "Orbital [WSR Release]",
+          "views": 127,
+          "videoId": "gu_iSXXKavk"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/gu_iSXXKavk/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/gu_iSXXKavk/hqdefault.jpg"
+    },
+    {
+      "name": "TANN3R",
+      "totalViews": 90,
+      "tracks": [
+        {
+          "title": "Danger! [WSR Release]",
+          "views": 90,
+          "videoId": "_0RyUjQn7oU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/_0RyUjQn7oU/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/_0RyUjQn7oU/hqdefault.jpg"
+    },
+    {
+      "name": "M.T",
+      "totalViews": 83,
+      "tracks": [
+        {
+          "title": "Fou [WSR Release]",
+          "views": 83,
+          "videoId": "oqLeeNKXz5Y"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/oqLeeNKXz5Y/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/oqLeeNKXz5Y/hqdefault.jpg"
+    },
+    {
+      "name": "edumps Vs M4R1US BP",
+      "totalViews": 75,
+      "tracks": [
+        {
+          "title": "Piece Of Your Heart Cover [WSR Battle]",
+          "views": 75,
+          "videoId": "nQh-YV4nUeU"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/nQh-YV4nUeU/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/nQh-YV4nUeU/hqdefault.jpg"
+    },
+    {
+      "name": "HankX",
+      "totalViews": 60,
+      "tracks": [
+        {
+          "title": "Fire [WSR Release]",
+          "views": 60,
+          "videoId": "qDC7bO25kEQ"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/qDC7bO25kEQ/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/qDC7bO25kEQ/hqdefault.jpg"
+    },
+    {
+      "name": "Iva Rii",
+      "totalViews": 60,
+      "tracks": [
+        {
+          "title": "Fire [WSR Release]",
+          "views": 60,
+          "videoId": "qDC7bO25kEQ"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/qDC7bO25kEQ/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/qDC7bO25kEQ/hqdefault.jpg"
+    },
+    {
+      "name": "Lovely Falcon",
+      "totalViews": 52,
+      "tracks": [
+        {
+          "title": "I`m Not Ok [WSR Release]",
+          "views": 52,
+          "videoId": "lbjht9ZXvLY"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/lbjht9ZXvLY/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/lbjht9ZXvLY/hqdefault.jpg"
+    },
+    {
+      "name": "MIRZUL",
+      "totalViews": 2,
+      "tracks": [
+        {
+          "title": "CAHAYA [WSR Release]",
+          "views": 2,
+          "videoId": "UFynmEtoUVI"
+        }
+      ],
+      "image": "https://i.ytimg.com/vi/UFynmEtoUVI/hqdefault.jpg",
+      "avatar": "https://i.ytimg.com/vi/UFynmEtoUVI/hqdefault.jpg"
+    }
+  ]
+}

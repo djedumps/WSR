@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="World Studio Records - Next-generation global music label. Premium releases, world-class artists, and cutting-edge production tools.">
+    <title>World Studio Records - Next-Generation Music Label</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="logo WSR.png" alt="WSR" class="navbar-logo-img">
+                <span>WSR</span>
+            </a>
+            
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="#home" class="navbar-link active">Home</a></li>
+                <li><a href="#releases" class="navbar-link">Releases</a></li>
+                <li><a href="#artists" class="navbar-link">Artists</a></li>                <li><a href="radar.html" class="navbar-link">Radar</a></li>                <li><a href="#producers" class="navbar-link">Producers</a></li>
+                <li><a href="#creators" class="navbar-link">Creators</a></li>
+                <li><a href="#news" class="navbar-link">News</a></li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="#submit" class="btn btn-primary btn-sm" title="Send us your demo track" aria-label="Submit your demo track">Submit Demo</a>
+                <button class="profile-btn" id="profileBtn" aria-label="User profile and login" title="Login / Sign up">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </button>
+                <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <main id="main-content">
+    <section class="hero" id="home" role="banner">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>◬</span>
+                    <span>World Studio Records</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    The Future of<br>
+                    <span class="text-gradient">Electronic Music</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Premium releases, world-class artists, cutting-edge production tools, 
+                    and copyright-free music — all in one unified ecosystem.
+                </p>
+                
+                <div class="hero-actions flex flex-wrap gap-4 justify-center">
+                    <a href="#releases" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        Explore Catalog
+                    </a>
+                    <a href="#artists" class="btn btn-secondary btn-lg">View Artists</a>
+                    <a href="#submit" class="btn btn-tertiary btn-lg">Submit Music</a>
+                </div>
+                
+                <div class="hero-stats grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="stat-item">
+                        <div class="stat-value">33k+</div>
+                        <div class="stat-label">Total Streams</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">28</div>
+                        <div class="stat-label">Signed Artists</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">57</div>
+                        <div class="stat-label">Releases</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">20+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST RELEASES -->
+    <section class="section" id="releases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest <span class="text-gradient">Releases</span></h2>
+                <p class="section-subtitle">Discover the freshest tracks from our global roster of innovative producers</p>
+            </div>
+            
+            <div class="grid grid-auto-fit gap-6" id="latestReleasesGrid">
+                <!-- Release 1 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/kEFhQEQm2ZM/hqdefault.jpg" alt="Never Be The Same" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">Never Be The Same</h3>
+                        <p class="card-subtitle">YTM x edumps</p>
+                    </div>
+                </div>
+                
+                <!-- Release 2 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/8Rab-4lgOCM/hqdefault.jpg" alt="Beautiful Moon" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">Beautiful Moon</h3>
+                        <p class="card-subtitle">Tibo Walker</p>
+                    </div>
+                </div>
+                
+                <!-- Release 3 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/bn779nghq2Q/hqdefault.jpg" alt="i miss you" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">i miss you</h3>
+                        <p class="card-subtitle">YTM</p>
+                    </div>
+                </div>
+                
+                <!-- Release 4 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/-nCqg5BsGQY/hqdefault.jpg" alt="Fearless" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">Fearless</h3>
+                        <p class="card-subtitle">J.H.L</p>
+                    </div>
+                </div>
+                
+                <!-- Release 5 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/Zsa2O7cMq6Q/hqdefault.jpg" alt="Half" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">Half</h3>
+                        <p class="card-subtitle">J.H.L</p>
+                    </div>
+                </div>
+                
+                <!-- Release 6 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/CfI55SE-MJo/hqdefault.jpg" alt="OceanWave" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">OceanWave</h3>
+                        <p class="card-subtitle">The Space Arcade</p>
+                    </div>
+                </div>
+                
+                <!-- Release 7 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/nNoB1PNwWgA/hqdefault.jpg" alt="Dangerous Desire" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">Dangerous Desire</h3>
+                        <p class="card-subtitle">SUNDMAN</p>
+                    </div>
+                </div>
+                
+                <!-- Release 8 -->
+                <div class="card card-release">
+                    <img src="https://i.ytimg.com/vi/lbjht9ZXvLY/hqdefault.jpg" alt="I'm Not Ok" class="card-release-cover">
+                    <div class="card-release-overlay">
+                        <div class="card-release-play">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-release-content">
+                        <h3 class="card-title">I'm Not Ok</h3>
+                        <p class="card-subtitle">Lovely Falcon</p>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // Load latest releases dynamically
+                async function loadLatestReleases() {
+                    try {
+                        const response = await fetch('youtube_data.json');
+                        const data = await response.json();
+                        
+                        // Store full catalog globally for player
+                        window.fullCatalog = data.tracks || [];
+                        
+                        // Sort by date (newest first), then by views (most viewed first)
+                        const sortedTracks = data.tracks.sort((a, b) => {
+                            const dateCompare = new Date(b.date) - new Date(a.date);
+                            if (dateCompare !== 0) return dateCompare;
+                            return (b.viewsNum || 0) - (a.viewsNum || 0);
+                        });
+                        
+                        // Get first 8 tracks
+                        const latestTracks = sortedTracks.slice(0, 8);
+                        
+                        const grid = document.getElementById('latestReleasesGrid');
+                        grid.innerHTML = '';
+                        
+                        latestTracks.forEach(track => {
+                            const card = document.createElement('div');
+                            card.className = 'card card-release';
+                            
+                            const cleanTitle = track.title
+                                .replace('[WSR Release]', '')
+                                .replace('[WSR X NCR Release]', '')
+                                .replace('[WSR x NCR Release]', '')
+                                .replace('[WSR Battle]', '')
+                                .trim();
+                            
+                            card.innerHTML = `
+                                <img src="${track.artwork}" alt="${cleanTitle}" class="card-release-cover">
+                                <div class="card-release-overlay">
+                                    <div class="card-release-play">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="5 3 19 12 5 21 5 3"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="card-release-content">
+                                    <h3 class="card-title">${cleanTitle}</h3>
+                                    <p class="card-subtitle">${track.artist}</p>
+                                </div>
+                            `;
+                            
+                            // Add click event to play button
+                            const playButton = card.querySelector('.card-release-play');
+                            playButton.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                if (typeof playTrack !== 'undefined' && track.videoId) {
+                                    console.log('🎵 Playing from releases:', track.title);
+                                    window.currentPlaylist = window.fullCatalog.filter(t => t.videoId);
+                                    window.currentTrackIndex = window.currentPlaylist.findIndex(t => t.videoId === track.videoId);
+                                    playTrack(track);
+                                }
+                            });
+                            
+                            grid.appendChild(card);
+                        });
+                    } catch (error) {
+                        console.error('Error loading releases:', error);
+                    }
+                }
+                
+                // Initialize static cards with click handlers
+                function initializeStaticCards() {
+                    const staticCards = document.querySelectorAll('#latestReleasesGrid .card-release');
+                    staticCards.forEach((card, index) => {
+                        const playButton = card.querySelector('.card-release-play');
+                        if (playButton) {
+                            playButton.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                if (window.fullCatalog && window.fullCatalog[index] && typeof playTrack !== 'undefined') {
+                                    const track = window.fullCatalog[index];
+                                    console.log('🎵 Playing from static card:', track.title);
+                                    window.currentPlaylist = window.fullCatalog.filter(t => t.videoId);
+                                    window.currentTrackIndex = window.currentPlaylist.findIndex(t => t.videoId === track.videoId);
+                                    playTrack(track);
+                                }
+                            });
+                        }
+                    });
+                }
+                
+                // Load on page load
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        loadLatestReleases();
+                        // Initialize static cards after a delay to ensure fullCatalog is loaded
+                        setTimeout(initializeStaticCards, 500);
+                    });
+                } else {
+                    loadLatestReleases();
+                    setTimeout(initializeStaticCards, 500);
+                }
+                
+                // Force correct catalog link behavior
+                const catalogBtn = document.getElementById('viewCatalogBtn');
+                if (catalogBtn) {
+                    catalogBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.location.href = 'releases.html';
+                    });
+                }
+            </script>
+            
+            <div class="text-center mt-12">
+                <a href="releases.html" class="btn btn-secondary btn-lg" id="viewCatalogBtn">View Full Catalog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED ARTISTS -->
+    <section class="section" id="artists">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span class="text-gradient-secondary">Artists</span></h2>
+                <p class="section-subtitle">Meet the visionary producers shaping the sound of tomorrow</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Artist 1 -->
+                <div class="card card-artist">
+                    <img src="https://i.ytimg.com/vi/Zsa2O7cMq6Q/maxresdefault.jpg" alt="J.H.L" class="card-artist-image">
+                    <h3 class="card-title">J.H.L</h3>
+                    <p class="card-subtitle">Electronic • 12.0M views</p>
+                    <p class="card-description">Rising electronic producer with emotional and melodic soundscapes. Hit tracks "Half" (12M) and "Fearless" (377 views).</p>
+                    <a href="#jhl" class="btn btn-tertiary btn-full mt-4">View Profile</a>
+                </div>
+                
+                <!-- Artist 2 -->
+                <div class="card card-artist">
+                    <img src="https://i.ytimg.com/vi/F8r22WDoBaY/maxresdefault.jpg" alt="Roadtownboy" class="card-artist-image">
+                    <h3 class="card-title">Roadtownboy</h3>
+                    <p class="card-subtitle">Electronic • 792 views</p>
+                    <p class="card-description">Atmospheric electronic artist with cinematic productions. Known for the track "Lights Above You".</p>
+                    <a href="#roadtownboy" class="btn btn-tertiary btn-full mt-4">View Profile</a>
+                </div>
+                
+                <!-- Artist 3 -->
+                <div class="card card-artist">
+                    <img src="https://i.ytimg.com/vi/nNoB1PNwWgA/maxresdefault.jpg" alt="SUNDMAN" class="card-artist-image">
+                    <h3 class="card-title">SUNDMAN</h3>
+                    <p class="card-subtitle">Electronic • 634 views</p>
+                    <p class="card-description">Dark electronic producer creating intense and powerful soundscapes. Featured track "Dangerous Desire".</p>
+                    <a href="#sundman" class="btn btn-tertiary btn-full mt-4">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="artists.html" class="btn btn-secondary btn-lg" id="viewArtistsBtn">View All Artists</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAYLISTS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Curated <span class="text-gradient">Playlists</span></h2>
+                <p class="section-subtitle">Hand-picked collections for every mood and moment</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <!-- Playlist 1 -->
+                <div class="card card-playlist">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400" alt="Future Bass Essentials" class="card-playlist-cover">
+                    <div class="card-playlist-content">
+                        <h4 class="card-title">Future Bass Essentials</h4>
+                        <p class="card-subtitle">45 tracks • 3h 20min</p>
+                        <button class="btn btn-primary btn-sm mt-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            Play
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Playlist 2 -->
+                <div class="card card-playlist">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400" alt="Midnight Techno" class="card-playlist-cover">
+                    <div class="card-playlist-content">
+                        <h4 class="card-title">Midnight Techno</h4>
+                        <p class="card-subtitle">62 tracks • 4h 45min</p>
+                        <button class="btn btn-primary btn-sm mt-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            Play
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Playlist 3 -->
+                <div class="card card-playlist">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400" alt="Progressive Anthems" class="card-playlist-cover">
+                    <div class="card-playlist-content">
+                        <h4 class="card-title">Progressive Anthems</h4>
+                        <p class="card-subtitle">38 tracks • 2h 55min</p>
+                        <button class="btn btn-primary btn-sm mt-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            Play
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Playlist 4 -->
+                <div class="card card-playlist">
+                    <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400" alt="Chill Vibes Only" class="card-playlist-cover">
+                    <div class="card-playlist-content">
+                        <h4 class="card-title">Chill Vibes Only</h4>
+                        <p class="card-subtitle">51 tracks • 3h 40min</p>
+                        <button class="btn btn-primary btn-sm mt-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                            Play
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCERS HUB -->
+    <section class="section" id="producers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Producers <span class="text-gradient">Hub</span></h2>
+                <p class="section-subtitle">Professional tools, resources, and education for music producers</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Feature 1 -->
+                <div class="card text-center">
+                    <div class="producer-icon primary">
+                        🎹
+                    </div>
+                    <h3 class="card-title">Sample Packs</h3>
+                    <p class="card-description">Premium sound libraries from industry-leading sound designers. Royalty-free and exclusive.</p>
+                    <a href="#packs" class="btn btn-tertiary btn-full mt-6">Browse Packs</a>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="card text-center">
+                    <div class="producer-icon secondary">
+                        🎛️
+                    </div>
+                    <h3 class="card-title">VST Plugins</h3>
+                    <p class="card-description">Exclusive synthesizers and effects designed by our expert development team.</p>
+                    <a href="#plugins" class="btn btn-tertiary btn-full mt-6">View Plugins</a>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="card text-center">
+                    <div class="producer-icon success">
+                        📚
+                    </div>
+                    <h3 class="card-title">Masterclasses</h3>
+                    <p class="card-description">Learn from signed artists. Production, mixing, mastering, and music business.</p>
+                    <a href="#courses" class="btn btn-tertiary btn-full mt-6">Start Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREATORS SECTION -->
+    <section class="section" id="creators">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">For <span class="text-gradient-secondary">Creators</span></h2>
+                <p class="section-subtitle">Copyright-free music for content creators, streamers, and filmmakers</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card card-creators">
+                    <h3>Free Music Library</h3>
+                    <p>
+                        Access thousands of high-quality, copyright-free tracks for your videos, streams, and projects. 
+                        Simple attribution required.
+                    </p>
+                    <a href="#library" class="btn btn-primary btn-lg">Browse Library</a>
+                </div>
+                
+                <div class="card card-creators">
+                    <h3>Licensing Made Easy</h3>
+                    <p>
+                        Automated copyright claims management, whitelist tools, and direct artist support. 
+                        Perfect for YouTube, Twitch, and TikTok.
+                    </p>
+                    <a href="#licensing" class="btn btn-secondary btn-lg">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS & EVENTS -->
+    <section class="section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">News & <span class="text-gradient">Events</span></h2>
+                <p class="section-subtitle">Stay updated with the latest from NEXUS</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- News 1 -->
+                <div class="card">
+                    <div class="news-placeholder primary"></div>
+                    <span class="text-small news-date">December 28, 2025</span>
+                    <h3 class="card-title mt-2">NEXUS Festival 2026 Lineup Revealed</h3>
+                    <p class="card-description">50+ artists across 3 stages. The biggest electronic music event of the year.</p>
+                    <a href="#festival" class="btn btn-tertiary btn-full mt-4">Read More</a>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="card">
+                    <div class="news-placeholder secondary"></div>
+                    <span class="text-small news-date purple">December 20, 2025</span>
+                    <h3 class="card-title mt-2">New Plugin Suite Released</h3>
+                    <p class="card-description">Introducing NEXUS Synth Pro - our most advanced synthesizer to date.</p>
+                    <a href="#plugin" class="btn btn-tertiary btn-full mt-4">Read More</a>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="card">
+                    <div class="news-placeholder success"></div>
+                    <span class="text-small news-date green">December 15, 2025</span>
+                    <h3 class="card-title mt-2">Masterclass Series Launched</h3>
+                    <p class="card-description">Learn directly from APEX, VORTEX, and NOVA in our new education program.</p>
+                    <a href="#masterclass" class="btn btn-tertiary btn-full mt-4">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBMIT DEMO CTA -->
+    <section class="section" id="submit">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-box-overlay"></div>
+                <div class="cta-box-content">
+                    <h2>Ready to Join WSR?</h2>
+                    <p>
+                        Submit your demo and become part of the next generation of electronic music.
+                    </p>
+                    <div class="cta-box-actions">
+                        <a href="#demo-form" class="btn btn-primary btn-xl">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            Submit Your Demo
+                        </a>
+                        <a href="#about" class="btn btn-tertiary btn-xl">Learn About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Artists Modal -->
+    <div class="artists-modal" id="artistsModal" role="dialog" aria-labelledby="artistsModalTitle" aria-modal="true">
+        <div class="artists-modal-overlay" id="artistsModalOverlay"></div>
+        <div class="artists-modal-content">
+            <div class="artists-modal-header">
+                <h2 id="artistsModalTitle">Our Artists</h2>
+                <button class="artists-modal-close" id="artistsModalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="artists-modal-search">
+                <input type="text" id="artistsSearchInput" class="input" placeholder="Search artists by name or genre...">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </div>
+            
+            <div class="artists-modal-stats">
+                <span class="catalog-stat"><strong id="totalArtistsCount">45</strong> Artists</span>
+                <span class="catalog-stat"><strong>12</strong> Countries</span>
+                <span class="catalog-stat"><strong>248</strong> Releases</span>
+            </div>
+            
+            <div class="artists-modal-body" id="artistsModalBody">
+                <div class="artists-grid grid grid-auto-fit gap-6" id="artistsGrid">
+                    <!-- Artists will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Catalog Modal -->
+    <div class="catalog-modal" id="catalogModal" role="dialog" aria-labelledby="catalogModalTitle" aria-modal="true">
+        <div class="catalog-modal-overlay" id="catalogModalOverlay"></div>
+        <div class="catalog-modal-content">
+            <div class="catalog-modal-header">
+                <h2 id="catalogModalTitle">Full Music Catalog</h2>
+                <button class="catalog-modal-close" id="catalogModalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="catalog-modal-search">
+                <input type="text" id="catalogSearchInput" class="input" placeholder="Search by title, artist, or genre...">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </div>
+
+            <div class="catalog-modal-filters">
+                <div class="catalog-filter-group">
+                    <label for="artistFilterSelect">Artist:</label>
+                    <select id="artistFilterSelect" class="filter-select">
+                        <option value="">All Artists</option>
+                    </select>
+                </div>
+                <div class="catalog-filter-group">
+                    <label for="genreFilterSelect">Genre:</label>
+                    <select id="genreFilterSelect" class="filter-select">
+                        <option value="">All Genres</option>
+                    </select>
+                </div>
+                <button id="resetCatalogFilters" class="btn-reset-filters">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                        <path d="M21 3v5h-5"/>
+                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                        <path d="M3 21v-5h5"/>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+            
+            <div class="catalog-modal-stats">
+                <span class="catalog-stat"><strong id="displayedTracksCount">248</strong> Tracks</span>
+                <span class="catalog-stat"><strong>45</strong> Artists</span>
+                <span class="catalog-stat"><strong>12</strong> Genres</span>
+            </div>
+            
+            <div class="catalog-modal-body" id="catalogModalBody">
+                <div class="catalog-tracks-grid" id="catalogTracksGrid">
+                    <!-- Tracks will be dynamically loaded here -->
+                </div>
+            </div>
+            
+            <div class="catalog-modal-footer">
+                <a href="releases.html" class="btn btn-primary">Go to Full Releases Page</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal" role="dialog" aria-labelledby="authModalTitle" aria-modal="true">
+        <div class="auth-modal-overlay" id="authModalOverlay"></div>
+        <div class="auth-modal-content">
+            <button class="auth-modal-close" id="authModalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login" id="loginTab">Login</button>
+                <button class="auth-tab" data-tab="signup" id="signupTab">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form-container active" id="loginForm">
+                <h2 id="authModalTitle">Welcome Back</h2>
+                <p class="auth-subtitle">Sign in to access your account</p>
+                
+                <form class="auth-form" id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" class="input" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="input" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#forgot" class="auth-link">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    
+                    <div class="auth-social">
+                        <button type="button" class="auth-social-btn" aria-label="Sign in with Google">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="auth-social-btn" aria-label="Sign in with Spotify">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                            Spotify
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="auth-form-container" id="signupForm">
+                <h2>Create Account</h2>
+                <p class="auth-subtitle">Join the WSR community</p>
+                
+                <form class="auth-form" id="signupFormElement">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" class="input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" class="input" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" class="input" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" class="input" placeholder="••••••••" required>
+                    </div>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the <a href="#terms" class="auth-link">Terms</a> and <a href="#privacy" class="auth-link">Privacy Policy</a></span>
+                    </label>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                    
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    
+                    <div class="auth-social">
+                        <button type="button" class="auth-social-btn" aria-label="Sign up with Google">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="auth-social-btn" aria-label="Sign up with Spotify">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                            Spotify
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-section">
+                    <div class="navbar-logo">
+                        <img src="logo WSR.png" alt="WSR" class="navbar-logo-img">
+                        <span>WSR</span>
+                    </div>
+                    <p class="footer-description">From Portugal to the World.</p>
+                    <div class="footer-socials">
+                        <a href="#spotify" class="footer-social-link" aria-label="Spotify">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                        </a>
+                        <a href="#soundcloud" class="footer-social-link" aria-label="SoundCloud">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815z"/>
+                            </svg>
+                        </a>
+                        <a href="#youtube" class="footer-social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="#instagram" class="footer-social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Music -->
+                <div class="footer-section">
+                    <h4>Music</h4>
+                    <ul class="footer-links">
+                        <li><a href="#releases">Releases</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#playlists">Playlists</a></li>
+                        <li><a href="#genres">Genres</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#producers">Producers Hub</a></li>
+                        <li><a href="#creators">For Creators</a></li>
+                        <li><a href="#submit">Submit Demo</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 World Studio Records. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MUSIC PLAYER -->
+    <div class="player-mini active" id="player">
+        <div class="player-container">
+            <div class="player-track">
+                <div class="player-artwork-container">
+                    <img src="https://i.ytimg.com/vi/UFynmEtoUVI/maxresdefault.jpg" alt="Now Playing" class="player-cover" id="player-cover-img">
+                    <div id="youtube-embed-player"></div>
+                </div>
+                <div class="player-info">
+                    <h4>CAHAYA</h4>
+                    <p>MIRZUL</p>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button class="player-btn" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="19 20 9 12 19 4 19 20"/>
+                        <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="player-btn player-btn-play" aria-label="Play">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                </button>
+                <button class="player-btn" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 4 15 12 5 20 5 4"/>
+                        <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="player-progress-wrapper">
+                <span class="player-time">1:32</span>
+                <div class="player-progress">
+                    <div class="player-progress-bar"></div>
+                </div>
+                <span class="player-time">4:20</span>
+            </div>
+            
+            <div class="player-volume">
+                <button class="player-btn" aria-label="Volume">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Player Element -->
+    <audio id="audio-player" preload="metadata"></audio>
+    
+    <!-- JavaScript -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
